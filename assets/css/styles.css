@@ -773,7 +773,6 @@ body {
   margin: 40px auto 0 auto;
   border-radius: 2px;
   height: 80px;
-  /* Fixed height for navbar */
   z-index: 1;
 }
 
@@ -910,14 +909,14 @@ body {
 }
 
 .a {
-  background: url(/icfaifc_project/assets/images/achievment-bg.png);
+  background: url('../images/achievment-bg.png');
   background-position: 20%;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .b {
-  background: url(/icfaifc_project/assets/images/achievment-bg2.png);
+  background: url('../images/achievment-bg2.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -1299,7 +1298,7 @@ body {
 }
 
 .c {
-  background: url(/icfaifc_project/assets/images/achievment-bg3.png);
+  background: url('../images/achievment-bg3.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1421,7 +1420,7 @@ body {
 }
 
 .d {
-  background: url(/icfaifc_project/assets/images/achievment-bg4.png), url(/icfaifc_project/assets/images/football.webp);
+  background: url('../images/achievment-bg4.png'), url('../assets/images/football.webp');
   background-position: center, right bottom;
   background-repeat: no-repeat;
   background-size: contain, 20%;
@@ -1531,7 +1530,7 @@ body {
 }
 
 .e {
-  background: url(/icfaifc_project/assets/images/achievment-bg5.png);
+  background: url('../images/achievment-bg5.png');
   background-position: center;
   background-size: contain;
 }
@@ -1589,7 +1588,7 @@ body {
 }
 
 .f {
-  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url(/icfaifc_project/assets/images/achievment-bg6.png) no-repeat;
+  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../images/achievment-bg6.png') no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -1687,7 +1686,7 @@ body {
 }
 
 .g {
-  background: linear-gradient(135deg, rgba(3, 3, 3, 0.3), rgba(56, 55, 55, 0.773)), url(/icfaifc_project/assets/images/achievment-bg7.png) no-repeat;
+  background: linear-gradient(135deg, rgba(3, 3, 3, 0.3), rgba(56, 55, 55, 0.773)), url('../images/achievment-bg7.png') no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -1793,7 +1792,7 @@ body {
 } */
 
 .x {
-  background: url(/icfaifc_project/assets/images/extrabg.png) no-repeat;
+  background: url('../images/extrabg.png') no-repeat;
   background-position: center;
   background-size: contain;
 }
@@ -2047,7 +2046,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 100px;
-  background: url(/icfaifc_project/assets/images/jersybg);
+  background: url('../images/jersybg');
   background-size: cover;
   background-position: center;
   position: relative;
