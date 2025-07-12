@@ -1041,7 +1041,7 @@ body {
 }
 
 .a {
-  background: url('../images/achievment-bg.png');
+  background: url('../images/achievment-bg.webp');
   background-position: 20%;
   background-size: contain;
   background-repeat: no-repeat;
