@@ -1886,7 +1886,14 @@ body {
   margin-bottom: 10px;
 }
 
+.textContentE h5 {
+  font-size:20px;
+  font-weight: 500;
+  color: #f6f4f4;
+  margin: 8px 0 16px;
+  font-size: 20px;
 
+}
 
 .textContentE .text {
   text-align: left;
