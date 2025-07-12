@@ -71,7 +71,7 @@ body {
 
 .hero {
   height: 60vh;
-  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('/icfaifc_project/assets/images/hero.jpg');
+  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../images/hero.jpg');
   display: flex;
   align-items: center;
   justify-content: center;
