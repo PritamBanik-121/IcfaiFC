@@ -1437,7 +1437,7 @@ body {
   border: 1px solid rgba(102, 100, 100, 0.9);
   border-radius: 12px;
   margin-bottom: 50px;
-  height: 370px;
+  height: 327px;
   width: 670px;
   margin-left: 50px;
 }
@@ -1517,7 +1517,7 @@ body {
   border: 1px solid rgba(102, 100, 100, 0.9);
   border-radius: 12px;
   margin-bottom: 50px;
-  height: 391px;
+  height: 347px;
   width: 890px;
   margin-left: 50px;
 }
@@ -1990,7 +1990,12 @@ body {
     font-size: 14px !important;
     text-align: center;
   }
-
+.textContentE h5{
+  color:#f6f4f4;
+  font-size: 14px;
+  text-align: center;
+}
+  
   .textContentC h5 {
     font-size: 14px;
     text-align: center;
