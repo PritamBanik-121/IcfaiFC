@@ -1554,7 +1554,12 @@ body {
   height: 600px;
 }
 
-
+.textContentE h5 {
+  font-weight: 500;
+  color: #f6f4f4;
+  margin: 0px 0 16px;
+  font-size: 20px;
+}
 .textContentE h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 30PX;
@@ -1990,11 +1995,7 @@ body {
     font-size: 14px !important;
     text-align: center;
   }
-.textContentE h5{
-  color:#f6f4f4;
-  font-size: 14px;
-  text-align: center;
-}
+
   
   .textContentC h5 {
     font-size: 14px;
