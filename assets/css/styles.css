@@ -13,8 +13,9 @@ body {
   font-family: 'Raleway', sans-serif;
   line-height: 1.6;
   color: #333;
-  height: 100%;
   background: #fafafa;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -71,7 +72,7 @@ body {
 
 .hero {
   height: 60vh;
-  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../images/hero.jpg');
+  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('/icfaifc_project/assets/images/hero.jpg');
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,7 +81,6 @@ body {
   position: relative;
   margin-top: 0px;
   background-position: center;
-  
   background-repeat: no-repeat ;
   background-size: cover;
 }
@@ -249,6 +249,10 @@ body {
 .last-3-games-section {
   padding: 70px 0px;
   background-color: rgb(red, green, blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .last-3-games {
@@ -334,16 +338,18 @@ body {
 .view-all-btn {
   align-content: center;
   text-align: center;
-  width: 110px;
-  height: 45px;
-  background-color: #ffffff;
-  color: #000000;
+  width: 120px;
+  height: 55px;
+  background-color: #0f0101;
+  color: #ffffff;
   font-size: 18px;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
   border-radius: 8px;
   transition: background-color 0.3s ease;
   padding: 10px;
+  text-decoration: none;
+  margin-top: 50px;
 }
 
 .view-all-btn:hover {
@@ -462,6 +468,9 @@ body {
 }
 
 .news .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -644,29 +653,6 @@ body {
   }
 }
 
-@media (max-width: 480px) {
-  .squad-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h2 {
-    font-size: 1.8rem;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  .achievement-card {
-    min-width: 220px;
-  }
-
-  .logos img {
-    width: 60px;
-    height: 60px;
-  }
-}
-
 
 
 
@@ -776,6 +762,7 @@ body {
   margin: 40px auto 0 auto;
   border-radius: 2px;
   height: 80px;
+  /* Fixed height for navbar */
   z-index: 1;
 }
 
@@ -847,7 +834,6 @@ body {
 
 
 .club-container {
-  margin: auto;
   padding: 30px;
   background: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -906,20 +892,36 @@ body {
   }
 }
 
+.achievement-wrapper{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 .achievment {
   width: 100%;
   height: 100%;
 }
 
+.a,
+.b,
+.c,
+.d,
+.e,
+.f,
+.g,
+.x{
+  height: 100%;
+}
+
 .a {
-  background: url('../images/achievment-bg.png');
+  background: url(/icfaifc_project/assets/images/achievment-bg.png);
   background-position: 20%;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .b {
-  background: url('../images/achievment-bg2.png');
+  background: url(/icfaifc_project/assets/images/achievment-bg2.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -1063,8 +1065,7 @@ body {
   border: 1px solid rgba(102, 100, 100, 0.9);
   border-radius: 12px;
   margin-bottom: 50px;
-  height: 650px;
-  width: 700px;
+ 
   margin-left: 50px;
 }
 
@@ -1079,8 +1080,7 @@ body {
   border: 1px solid rgba(102, 100, 100, 0.9);
   border-radius: 12px;
   margin-bottom: 20px;
-  width: 650px;
-  height: 488px;
+  
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
 }
 
@@ -1301,7 +1301,7 @@ body {
 }
 
 .c {
-  background: url('../images/achievment-bg3.png');
+  background: url(/icfaifc_project/assets/images/achievment-bg3.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1319,8 +1319,7 @@ body {
   border: 1px solid rgba(102, 100, 100, 0.9);
   border-radius: 12px;
   margin-bottom: 50px;
-  height: 428px;
-  width: 1350px;
+  
   margin-left: 50px;
 }
 
@@ -1423,7 +1422,7 @@ body {
 }
 
 .d {
-  background: url('../images/achievment-bg4.png'), url('../assets/images/football.webp');
+  background: url(/icfaifc_project/assets/images/achievment-bg4.png), url(/icfaifc_project/assets/images/football.webp);
   background-position: center, right bottom;
   background-repeat: no-repeat;
   background-size: contain, 20%;
@@ -1440,8 +1439,7 @@ body {
   border: 1px solid rgba(102, 100, 100, 0.9);
   border-radius: 12px;
   margin-bottom: 50px;
-  height: 327px;
-  width: 670px;
+ 
   margin-left: 50px;
 }
 
@@ -1520,8 +1518,6 @@ body {
   border: 1px solid rgba(102, 100, 100, 0.9);
   border-radius: 12px;
   margin-bottom: 50px;
-  height: 347px;
-  width: 890px;
   margin-left: 50px;
 }
 
@@ -1532,8 +1528,31 @@ body {
   border-radius: 12px;
 }
 
+.image-content,
+.imageContent0,
+.image-kontent,
+.imageContent3,
+.imageContent4,
+.imageContent5,
+.imageContent6,
+.imageContent7 {
+  flex-basis: 50%;
+}
+
+.textContent,
+.textkontent,
+.textContentX,
+.textContentC,
+.textContentXD,
+.textContentXE,
+.textContentXF,
+.textContentXG{
+  flex-basis: 50%;
+}
+
+
 .e {
-  background: url('../images/achievment-bg5.png');
+  background: url(/icfaifc_project/assets/images/achievment-bg5.png);
   background-position: center;
   background-size: contain;
 }
@@ -1557,12 +1576,7 @@ body {
   height: 600px;
 }
 
-.textContentE h5 {
-  font-weight: 500;
-  color: #f6f4f4;
-  margin: 0px 0 16px;
-  font-size: 20px;
-}
+
 .textContentE h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 30PX;
@@ -1596,7 +1610,7 @@ body {
 }
 
 .f {
-  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../images/achievment-bg6.png') no-repeat;
+  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url(/icfaifc_project/assets/images/achievment-bg6.png) no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -1613,8 +1627,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.9);
   border-radius: 12px;
   margin-bottom: 50px;
-  height: 660px;
-  width: 410px;
+
   margin-left: 50px;
 }
 
@@ -1694,7 +1707,7 @@ body {
 }
 
 .g {
-  background: linear-gradient(135deg, rgba(3, 3, 3, 0.3), rgba(56, 55, 55, 0.773)), url('../images/achievment-bg7.png') no-repeat;
+  background: linear-gradient(135deg, rgba(3, 3, 3, 0.3), rgba(56, 55, 55, 0.773)), url(/icfaifc_project/assets/images/achievment-bg7.png) no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -1710,8 +1723,7 @@ body {
   border: 1px solid rgba(102, 100, 100, 0.9);
   border-radius: 12px;
   margin-bottom: 50px;
-  height: 643px;
-  width: 480px;
+
   margin-left: 50px;
 }
 
@@ -1789,18 +1801,8 @@ body {
   }
 }
 
-/* @keyframes borderfade {
-  0% {
-    border-color: transparent;
-  }
-
-  100% {
-    border-color: #F86E03;
-  }
-} */
-
 .x {
-  background: url('../images/extrabg.png') no-repeat;
+  background: url(/icfaifc_project/assets/images/extrabg.png) no-repeat;
   background-position: center;
   background-size: contain;
 }
@@ -1816,8 +1818,7 @@ body {
   border: 1px solid rgba(102, 100, 100, 0.9);
   border-radius: 12px;
   margin-bottom: 50px;
-  height: 504px;
-  width: 500PX;
+ 
   margin-left: 50px;
 }
 
@@ -1999,7 +2000,6 @@ body {
     text-align: center;
   }
 
-  
   .textContentC h5 {
     font-size: 14px;
     text-align: center;
@@ -2055,7 +2055,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 100px;
-  background: url('../images/jersybg');
+  background: url(/icfaifc_project/assets/images/jersybg);
   background-size: cover;
   background-position: center;
   position: relative;
