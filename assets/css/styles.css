@@ -1500,7 +1500,7 @@ body {
 }
 
 .textkontent .text {
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.6;
