@@ -80,6 +80,9 @@ body {
   position: relative;
   margin-top: 0px;
   background-position: center;
+  
+  background-repeat: no-repeat ;
+  background-size: cover;
 }
 
 .hero-overlay {
