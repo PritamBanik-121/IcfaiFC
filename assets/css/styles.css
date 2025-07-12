@@ -2435,11 +2435,12 @@ body {
 
 .arrow1 {
   height: 200px;
-  width: 140px;
-  position: absolute;
-  top: 20%;
-  left: 12%;
-  z-index: 20;
+    width: 140px;
+    position: absolute;
+    top: 19%;
+    left: 7%;
+    z-index: 20;
+    transform: rotate(24deg);
 }
 
 .j25 {
@@ -2455,13 +2456,13 @@ body {
 }
 
 .arrow2 {
-  transform: scaleX(-1);
-  height: 200px;
-  width: 140px;
-  position: absolute;
-  top: 20%;
-  right: 12%;
-  z-index: 20;
+     height: 200px;
+    width: 140px;
+    position: absolute;
+    top: 20%;
+    right: 6%;
+    z-index: 20;
+    transform: rotate(-33deg);
 }
 
 .imagecontainer1 img,
