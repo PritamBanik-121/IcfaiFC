@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ICFAI FC - Football Club</title>
-  <base href="/IcfaiFc/">
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -22,11 +20,10 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#results">Results</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-
+      <li><a href="#achievement-wrapper">Achievements</a></li>
       <li><a href="#squad">Squad</a></li>
-      <li><a href="#squad">Sponsors</a></li>
       <li><a href="#news">News</a></li>
+      <li><a href="#sponsors-section">Sponsors</a></li>
     </ul>
 
     <div class="hamburger" id="hamburger">
@@ -39,14 +36,14 @@
       <ul class="links left">
         <li><a href="#home">Home</a></li>
         <li><a href="#results">Results</a></li>
-        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#achievement-wrapper">Achievements</a></li>
       </ul>
       <div class="logo" id="nav-logo">
         <img src="./assets/images/icfai_fc_logo.webp" alt="ICFAI Logo" />
       </div>
       <ul class="links right">
         <li><a href="#squad">Squad</a></li>
-        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#sponsors-section">Sponsors</a></li>
         <li><a href="#news">News</a></li>
       </ul>
     </div>
@@ -80,7 +77,7 @@
       <div class="last-3-games">
         <div class="game-card">
           <div class="logos">
-            <img src="assets/images/opt logo.png" alt="Opponent">
+            <img src="assets/images/opt logo.webp" alt="Opponent">
             <span>VS</span>
             <img src="assets/images/icfai_fc_logo.webp" alt="ICFAI FC">
           </div>
@@ -92,7 +89,7 @@
           <div class="logos">
             <img src="assets/images/icfai_fc_logo.webp" alt="ICFAI FC">
             <span>VS</span>
-            <img src="assets/images/opt logo.png" alt="Opponent">
+            <img src="assets/images/opt logo.webp" alt="Opponent">
           </div>
           <h3>ICFAI FC <br> vs <br> YOUTH CLUB</h3>
           <p>Score: 2-0</p>
@@ -102,7 +99,7 @@
           <div class="logos">
             <img src="assets/images/icfai_fc_logo.webp" alt="ICFAI FC">
             <span>VS</span>
-            <img src="assets/images/opt logo.png" alt="Opponent">
+            <img src="assets/images/opt logo.webp" alt="Opponent">
           </div>
           <h3>ICFAI FC <br> vs <br> UBST</h3>
           <p>Score: 3-1</p>
@@ -110,8 +107,10 @@
         </div>
       </div>
     </div>
+    <a href="results.html" class="view-all-btn">View More</a>
+
   </section>
-  <div class="achievement-wrapper">
+  <div class="achievement-wrapper" id="achievement-wrapper">
     <div class="achievment-heading">
       <h2>Achievements</h2>
     </div>
@@ -122,7 +121,7 @@
           <img src="./assets/images/trophy.webp" alt="" srcset="">
         </div>
         <div class="textContent">
-          <img src="./assets/images/qleft.png" alt="Quote Icon" class="quote-icon-left">
+          <img src="./assets/images/qleft.webp" alt="Quote Icon" class="quote-icon-left">
 
           <p class="label">AWARD WINNING</p>
           <h1>Fair Play</h1>
@@ -133,7 +132,7 @@
             the Tripura Football Association (TFA). Demonstrating not only skill but also exemplary
             sportsmanship, the club was honored with the Fair Play Award
           </p>
-          <img src="./assets/images/qright.png" alt="Quote Icon" class="quote-icon-right">
+          <img src="./assets/images/qright.webp" alt="Quote Icon" class="quote-icon-right">
 
         </div>
       </div>
@@ -141,14 +140,14 @@
     <div class="achievment b">
       <div class="setB">
         <div class="textkontent">
-          <img src="./assets/images/orangeqleft.png" alt="Quote Icon" class="Quote-icon-left">
+          <img src="./assets/images/orangeqleft.webp" alt="Quote Icon" class="Quote-icon-left">
 
           <!-- <p class="label">AWARD WINNING</p> -->
           <h1>AIFF D-License Certified Coaches</h1>
           <h5>8 players from ICFAI FC successfully earned their AIFF D-License</h5>
           <P class="text" id="names">
             <span class="head">Certified Coaches-</span> <br>
-           1.SACHLANG JAMATIA <br>
+            1.SACHLANG JAMATIA <br>
             2. JUNAYAN CHAKMA <br>
             3. PRABESH REANG <br>
             4. DIPTO REANG <br>
@@ -157,12 +156,12 @@
             7. BILASH DEBBARMA <br>
             8. RAKESH JAMATIA <br>
           </P>
-          <img src="./assets/images/orangeqright.png" alt="Quote Icon" class="Quote-icon-right">
+          <img src="./assets/images/orangeqright.webp" alt="Quote Icon" class="Quote-icon-right">
 
         </div>
 
         <div class="image-kontent">
-          <img src="./assets/images/2024.jpg" alt="">
+          <img src="./assets/images/2024.webp" alt="">
         </div>
 
       </div>
@@ -170,7 +169,7 @@
     <div class="achievment x">
       <div class="setX">
         <div class="imageContent0">
-          <img src="assets/images/crpf.jpg" alt="" srcset="">
+          <img src="/icfaifc_project/assets/images/crpf.webp" alt="" srcset="">
         </div>
         <div class="textContentX">
           <h1>ICFAI FC's Samrat Debbarma Secures Government Job in CRPF</h1>
@@ -182,9 +181,8 @@
     </div>
     <div class="achievment c">
       <div class="setC">
-
         <div class="imageContent3">
-          <img src="assets/images/olympic.png" alt="" srcset="">
+          <img src="/icfaifc_project/assets/images/olympic.webp" alt="" srcset="">
         </div>
 
         <div class="textContentC">
@@ -202,12 +200,11 @@
             at Lovely Professional University, Punjab
           </h5>
           <p class="text">
-
             Secured 1st Position and received Gold Medals <br> <span> Players Name- </span></Players> <br>
-            ROHIT JAMATIA <br>
-            BILASH DEBBARMA <br>
-            SACHULANG DEBBARMA <br>
-            SAMRAT DEBBARMA <br>
+            1.ROHIT JAMATIA <br>
+            2.BILASH DEBBARMA <br>
+            3.SACHULANG DEBBARMA <br>
+            4.SAMRAT DEBBARMA <br>
           </p>
 
         </div>
@@ -230,7 +227,7 @@
         </div>
 
         <div class="imageContent4">
-          <img src="./assets/images/fourth.png" alt="" srcset="">
+          <img src="./assets/images/fourth.webp" alt="" srcset="">
         </div>
 
 
@@ -240,7 +237,7 @@
     <div class="achievment e">
       <div class="setE">
         <div class="imageContent5">
-          <img src="assets/images/girls.png" alt="" srcset="">
+          <img src="/icfaifc_project/assets/images/girls.webp" alt="" srcset="">
         </div>
         <div class="textContentE">
 
@@ -251,18 +248,13 @@
             tournament, held in Tripura, marked a significant milestone in the journey of women's football at ICFAI.
           </p>
         </div>
-
-
-
-
-
       </div>
     </div>
     <div class="achievment f">
       <div class="setF">
 
         <div class="textContentF">
-          <img src="assets/images/pin.png" class="pin" alt="Pin">
+          <img src="/icfaifc_project/assets/images/pin.webp" class="pin" alt="Pin">
           <h1>Sachlang Jamatia Honored as Tripura’s Best Promising Player – 2023</h1>
           <h5>ICFAI FC Star Shines in C-Division Club League Football Tournament
           </h5>
@@ -274,7 +266,7 @@
         </div>
 
         <div class="imageContent6">
-          <img src="assets/images/sachlang3.jpg" alt="" srcset="">
+          <img src="/icfaifc_project/assets/images/sachlang3.webp" alt="" srcset="">
         </div>
 
 
@@ -285,7 +277,7 @@
       <div class="setG">
         <div class="imageContent7">
 
-          <img src="assets/images/coach.jpg" alt="" srcset="">
+          <img src="/icfaifc_project/assets/images/coach.webp" alt="" srcset="">
         </div>
 
         <div class="textContentG">
@@ -298,92 +290,33 @@
         </div>
       </div>
     </div>
+    <section class="jersyies">
+      <p class="j24">2025 Mens Jersey</p>
+      <img src="/icfaifc_project/assets/images/curlyarrow.webp" alt="" class="arrow1">
+      <img src="/icfaifc_project/assets/images/curlyarrowrev.webp" alt="" class="arrow2">
+
+      <p class="j25">2024 Mens Jersey</p>
+
+      <div class="imageholder">
+        <div class="imagecontainer1">
+          <img src="/icfaifc_project/assets/images/j1.webp" alt="">
+        </div>
+        <div class="imagecontainer2">
+          <img src="/icfaifc_project/assets/images/j2.webp" alt="">
+        </div>
+      </div>
+    </section>
   </div>
-  <section class="jersyies">
-    <p class="j24">2025 Mens Jersey</p>
-    <img src="assets/images/curlyarrow.png" alt="" class="arrow1">
-    <img src="assets/images/curlyarrowrev.png" alt="" class="arrow2">
 
-    <p class="j25">2024 Mens Jersey</p>
 
-    <div class="imageholder">
-      <div class="imagecontainer1">
-        <img src="assets/images/j1.png" alt="">
-      </div>
-      <div class="imagecontainer2">
-        <img src="assets/images/j2.png" alt="">
-      </div>
-    </div>
-  </section>
-  <section class="squad-section" id="squad">
-    <h2>SQUAD</h2>
-    <p class="squad-subtitle">MEET OUR PLAYERS</p>
-    <div class="squad-grid">
-      <div class="player-card">
-        <img src="assets/images/player.jpg" alt="Nithin">
-        <div class="player-info">
-          <h3>NITHIN</h3>
-          <p>Midfielder</p>
-        </div>
-      </div>
-      <div class="player-card">
-        <img src="assets/images/player.jpg" alt="Krishnayan">
-        <div class="player-info">
-          <h3>KRISHNAYAN</h3>
-          <p>Defender</p>
-        </div>
-      </div>
-      <div class="player-card">
-        <img src="assets/images/player.jpg" alt="Pritam">
-        <div class="player-info">
-          <h3>PRITAM</h3>
-          <p>Striker</p>
-        </div>
-      </div>
-      <div class="player-card">
-        <img src="assets/images/player.jpg" alt="Gourab">
-        <div class="player-info">
-          <h3>GOURAB</h3>
-          <p>Forward</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="featured-video-section">
-    <h2>FEATURED VIDEOS
-    </h2>
-    <div class="video-grid">
 
-      <!-- Video 1 -->
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/SiVEIzfYAQk?autoplay=1&mute=1&loop=1" title="Video 1"
-          allow="autoplay; encrypted-media" allowfullscreen>
-        </iframe>
-      </div>
-
-      <!-- Video 2 -->
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/P8DWaBqI-jM?autoplay=1&mute=1&loop=1" title="Video 2"
-          allow="autoplay; encrypted-media" allowfullscreen>
-        </iframe>
-      </div>
-
-      <!-- Video 3 -->
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/DFkMkslrrcs?autoplay=1&mute=1&loop=1" title="Video 3"
-          allow="autoplay; encrypted-media" allowfullscreen>
-        </iframe>
-      </div>
-
-    </div>
-  </section>
   <section class="news" id="news">
     <div class="container">
       <h2 class="section-title">Latest News</h2>
       <div class="news-grid">
         <article class="news-card">
-          <img src="assets/images/news1.jpg" alt="News 1">
+          <img src="assets/images/news1.webp" alt="News 1">
           <div class="news-content">
             <h3>Match Begins</h3>
             <p class="date">June 5, 2025</p>
@@ -392,7 +325,7 @@
           </div>
         </article>
         <article class="news-card">
-          <img src="assets/images/news2.jpg" alt="News 2">
+          <img src="assets/images/news2.webp" alt="News 2">
           <div class="news-content">
             <h3>Another Match</h3>
             <p class="date">May 30, 2025</p>
@@ -401,7 +334,7 @@
           </div>
         </article>
         <article class="news-card">
-          <img src="assets/images/news3.jpg" alt="News 3">
+          <img src="assets/images/news3.webp" alt="News 3">
           <div class="news-content">
             <h3>ICFAI FC storms ahead with a solid 3-1 win against UBST</h3>
             <p class="date">May 22, 2025</p>
@@ -412,7 +345,148 @@
       </div>
     </div>
   </section>
- 
+
+
+
+
+  <!--Gourab's Code-->
+
+  <section class="sponsors-section" id="sponsors-section">
+    <h2>Our Sponsors</h2>
+    <div class="sponsor-logos">
+      <div class="logo-box">
+        <img src="./assets/images/OIP__1_-removebg-preview.webp" alt="Logo">
+      </div>
+      <div class="logo-box">
+        <img src="./assets/images/logo-variant-of-a-black-circle-that-forms-letters-free-vector-removebg-preview.webp"
+          alt="Logo">
+      </div>
+      <div class="logo-box">
+        <img src="./assets/images/adidas-logo-adidas-icon-transparent-free-png-removebg-preview.webp" alt="Logo">
+      </div>
+      <div class="logo-box">
+        <img src="./assets/images/logo-variant-of-a-black-circle-that-forms-letters-free-vector-removebg-preview.webp"
+          alt="Logo">
+      </div>
+      <div class="logo-box">
+        <img src="./assets/images/OIP__1_-removebg-preview.webp" alt="Logo">
+      </div>
+    </div>
+  </section>
+
+  <section class="instagram-section">
+    <h2>Follow Us on Facebook</h2>
+    <div class="logoG">
+      <a href="https://www.facebook.com/icfaifc" target="_blank">
+        <img src="./assets/images/download__7_-removebg-preview (1).webp" alt="ICFAI Football Club Logo" class="logo">
+      </a>
+      <a href="https://www.instagram.com/icfai.fc?igsh=YjN3aXh5eWk0aXVo">
+        <h3>@icfaifc</h3>
+      </a>
+
+    </div>
+
+    <div class="instagram-grid">
+      <div class="post">
+        <iframe
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ficfaifc%2Fposts%2Fpfbid02XcgmAQVKBwd2oE2uk2yLDStNyz8HKD7fhZiKLvXKFrXdjW5xoDAoTaDN2rSFGscPl&show_text=false&width=500"
+          width="500" height="281" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
+      <div class="post">
+        <iframe
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ficfaifc%2Fposts%2Fpfbid034WH65Av56Lqqn5zFBCTEJb2UY1SQUSUQ9SfdytHyfu3adtGYysvMrWwD4oeC8hNml&show_text=false&width=500"
+          width="500" height="358" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
+      <div class="post">
+        <iframe
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ficfaifc%2Fposts%2Fpfbid0gf1FUdsTiwjZG82EaCPDdQXAdQBjH55kc1EFj5Hu1qeSkKPoiZSQtGVEM3ucA1e7l&show_text=false&width=500"
+          width="500" height="375" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
+      <div class="post">
+        <iframe
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ficfaifc%2Fposts%2Fpfbid02wYXbqufGujPtFxF2KZumPfLV1wZbWhkevf7CS3z9PMW6Z2pqMJ2Rv1vB2Ms2jad9l&show_text=false&width=500"
+          width="500" height="375" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
+      <div class="post">
+        <iframe
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ficfaifc%2Fposts%2Fpfbid02XcgmAQVKBwd2oE2uk2yLDStNyz8HKD7fhZiKLvXKFrXdjW5xoDAoTaDN2rSFGscPl&show_text=false&width=500"
+          width="500" height="281" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
+      <div class="post">
+        <iframe
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ficfaifc%2Fposts%2Fpfbid02XcgmAQVKBwd2oE2uk2yLDStNyz8HKD7fhZiKLvXKFrXdjW5xoDAoTaDN2rSFGscPl&show_text=false&width=500"
+          width="500" height="281" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
+    </div>
+    <div class="view-more-wrapper">
+      <a href="https://www.facebook.com/icfaifc" class="view-more-btn" target="_blank">View More</a>
+    </div>
+  </section>
+  </section>
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <!-- Trophy & About -->
+      <div class="footer-column first-column">
+        <div class="social-icons">
+        </div>
+        <img src="./assets/images/icfai_fc_logo.webp" class="logo-image" />
+        <div class="footer-text">
+          <p>Become a member of our online community and get tickets to upcoming matches</p>
+        </div>
+      </div>
+
+      <!-- News Column -->
+      <div class="footer-column">
+        <h3>NEWS</h3>
+        <ul>
+          <li><a href="#">ICFAI FC secures important point away</a></li>
+          <li><a href="#">Gujrat FC new era in football development</a></li>
+          <li><a href="#">Dominating ICFAI FC swipe 3 goals</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer-column">
+        <h3>ADDRESS</h3>
+        <p>ICFAI Football Club, TRIPURA, KAMALGHAT, AGARTALA, TRIPURA 110000</p>
+        <p>Phone: +91 2222 5555 8888</p>
+        <p>Email: info@ICFAIFCCLUB.com</p>
+      </div>
+    </div>
+    </div>
+
+    <!-- SOCIAL HANDLES ROWS -->
+    <div class="footer-social-handles">
+      <div class="social-row">
+        <a href="https://www.instagram.com/icfai.fc?igsh=YjN3aXh5eWk0aXVo" target="_blank">
+          <img src="./assets/images/instagram-logo (1).webp" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com/icfaifc" target="_blank">
+          <img src="./assets/images/download__7_-removebg-preview (1).webp" alt="Facebook" />
+        </a>
+        <span></span>
+      </div>
+    </div>
+
+
+    <div class="footer-bottom">
+      <p>© 2025 ICFAI FC Club. All rights reserved</p>
+    </div>
+  </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
