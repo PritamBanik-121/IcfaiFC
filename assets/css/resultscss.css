@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+}
+html,body{
+height: 100%;
+width: 100%
+}
+.fc-club-section {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 32px 0;
+  font-family: "Oswald", sans-serif;
+  background: linear-gradient(135deg, #4f5c72 0%, #233570 100%);
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fc-club-title {
+  color: #fff;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 35px;
+  letter-spacing: 5px;
+}
+
+.fc-club-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.fc-club-card {
+  background: #f7fafd;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  width: 400px;
+  padding: 13px 20px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.15s;
+
+  height: 150px;
+}
+
+.fc-club-card:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.fc-club-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  margin-left: 10px;
+}
+
+.fc-club-image-right {
+  width: 58px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #7b8794;
+}
+
+.fc-club-image-left {
+  width: 55px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #7b8794;
+}
+
+
+.fc-club-match-info {
+  flex: 1;
+  text-align: center;
+  margin: 8 8px;
+}
+
+.fc-club-date {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.fc-club-score {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.fc-club-teams {
+  color: #334155;
+  font-size: 1.2rem;
+
+}
+
+@media (max-width: 900px) {
+  .fc-club-cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 18px;
+    margin: 10px;
+  }
+
+  .fc-club-section {
+    padding: 18px 0;
+  }
+
+  .fc-club-teams{
+    text-align: center;
+  }
+  .fc-club-card {
+    width: 300px;
+    height: 140px;
+    min-height: 140px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fc-club-cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 1fr);
+    gap: 14px;
+  }
+}
