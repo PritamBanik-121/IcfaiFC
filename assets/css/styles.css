@@ -92,6 +92,10 @@ body.loaded > *:not(.loading-screen) {
     padding: 20px 10px;
     margin: 20px 0;
   }
+  .club-container{
+    background:white;
+  }
+
 
   .club-heading {
     font-size: 1.2rem;
