@@ -118,54 +118,6 @@ window.onload = function () {
     }
   });
 
-  const football = document.querySelector('.football-animate');
-  const setG = document.querySelector('.setG');
-  const imageContent7 = document.querySelector('.imageContent7');
-  
-  if (football && setG && imageContent7) {
-   
-    setTimeout(() => {
-      const setGRect = setG.getBoundingClientRect();
-      const imageRect = imageContent7.getBoundingClientRect();
-      
-     
-      const startX = 0;
-      const startY = 0;
-      const centerX = imageRect.width /2; 
-      const centerY = imageRect.height / 3;
-      const endX = 0;
-      const endY = setGRect.height; 
-      
-    
-      const path = [
-        { x: startX, y: startY },
-        { x: centerX, y: centerY },
-        { x: centerX - 40, y: centerY },
-        { x: centerX - 100, y: centerY - 50 },
-        { x: endX, y: endY }, 
-      ];
-      
-      gsap.to(football, {
-        motionPath: {
-          path: path,
-          curviness: 1.8,
-          autoRotate: true,
-          alignOrigin: [0.5, 0.5]
-        },
-        duration: 2,
-        ease: "power1.inout",
-        scrollTrigger: {
-          trigger: ".setG",
-          start: "top center",
-          toggleActions: "play none none none",
-          markers: false
-        }
-      });
-    }, 100);
-  }
-
-
-
 }
 
 
