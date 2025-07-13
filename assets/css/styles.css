@@ -18,7 +18,7 @@ body {
   background: #fafafa;
   overflow-x: hidden;
 }
-loading-screen {
+.loading-screen {
   position: fixed;
   top: 0;
   left: 0;
