@@ -2855,4 +2855,7 @@ body.loaded > *:not(.loading-screen) {
   .carousel-item img {
     max-height: 500px; 
   }
+  .squad-section h2 {
+        font-size: 30px;
+    }
 }
