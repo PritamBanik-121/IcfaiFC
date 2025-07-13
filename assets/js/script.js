@@ -1,3 +1,16 @@
+  document.addEventListener('DOMContentLoaded', function() {
+  const loadingScreen = document.getElementById('loadingScreen');
+  
+  setTimeout(function() {
+    document.body.classList.add('loaded');
+    loadingScreen.style.opacity = '0';
+    setTimeout(function() {
+      loadingScreen.remove();
+    }, 500);
+  }, 3000);
+});
+
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -15,7 +28,15 @@ const navLinks = document.getElementById('nav-links');
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('show');
 });
-//made the nav bar collapsed after clicking outside
+
+const navLinkItems = document.querySelectorAll('.nav-links a');
+navLinkItems.forEach(link => {
+  link.addEventListener('click', () => {
+    if (navLinks.classList.contains('show')) {
+      navLinks.classList.remove('show');
+    }
+  });
+});
 
 document.addEventListener('click', (event) => {
   if (
@@ -110,8 +131,8 @@ window.onload = function () {
      
       const startX = 0;
       const startY = 0;
-      const centerX = imageRect.width + 18; 
-      const centerY = imageRect.height / 4;
+      const centerX = imageRect.width /2; 
+      const centerY = imageRect.height / 3;
       const endX = 0;
       const endY = setGRect.height; 
       
@@ -119,8 +140,8 @@ window.onload = function () {
       const path = [
         { x: startX, y: startY },
         { x: centerX, y: centerY },
-        { x: centerX - 40, y: centerY }, // Bounce up after hitting imageRect
-        { x: centerX - 100, y: centerY - 50 }, // Continue upward trajectory
+        { x: centerX - 40, y: centerY },
+        { x: centerX - 100, y: centerY - 50 },
         { x: endX, y: endY }, 
       ];
       
@@ -142,4 +163,113 @@ window.onload = function () {
       });
     }, 100);
   }
+
+
+
 }
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('carousel');
+  const items = carousel.querySelectorAll('.carousel-item');
+  const dots = document.querySelectorAll('.dot');
+  let currentIndex = 0;
+  let isUserScrolling = false;
+  let autoScrollInterval;
+  initResponsiveSquad();
+  setupCarousel();
+
+  function setupCarousel() {
+    updateActiveSlide(currentIndex);
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        scrollToIndex(currentIndex);
+        resetAutoScroll();
+      });
+    });
+    startAutoScroll();
+    carousel.addEventListener('scroll', handleScroll);
+  }
+
+  function updateActiveSlide(index) {
+    items.forEach((item, i) => {
+      item.classList.remove('active', 'blur-left', 'blur-right');
+
+      if (i === index) {
+        item.classList.add('active');
+      } else if (i === index - 1) {
+        item.classList.add('blur-left');
+      } else if (i === index + 1) {
+        item.classList.add('blur-right');
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  function scrollToIndex(index) {
+    const itemWidth = items[0].offsetWidth + 20;
+    carousel.scrollTo({
+      left: itemWidth * index,
+      behavior: 'smooth'
+    });
+    updateActiveSlide(index);
+  }
+
+  function handleScroll() {
+    isUserScrolling = true;
+    const scrollLeft = carousel.scrollLeft;
+    const itemWidth = items[0].offsetWidth + 20;
+    const index = Math.round(scrollLeft / itemWidth);
+    
+    if (index !== currentIndex) {
+      currentIndex = index;
+      updateActiveSlide(currentIndex);
+    }
+    
+    clearTimeout(carousel._scrollTimeout);
+    carousel._scrollTimeout = setTimeout(() => {
+      isUserScrolling = false;
+    }, 200);
+  }
+
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      if (!isUserScrolling) {
+        currentIndex = (currentIndex + 1) % items.length;
+        scrollToIndex(currentIndex);
+      }
+    }, 3000);
+  }
+
+  function resetAutoScroll() {
+    clearInterval(autoScrollInterval);
+    startAutoScroll();
+  }
+  function updateSquadImages() {
+    const squadImages = document.querySelectorAll('.carousel-item img');
+    const isMobile = window.innerWidth <= 768;
+    
+    squadImages.forEach(img => {
+      const newSrc = isMobile ? img.dataset.mobileSrc : img.dataset.desktopSrc;
+      if (newSrc && img.src !== newSrc) {
+        img.classList.add('loading');
+        img.onload = () => img.classList.remove('loading');
+        img.src = newSrc;
+      }
+    });
+  }
+  function initResponsiveSquad() {
+    updateSquadImages();
+    window.addEventListener('resize', function() {
+      updateSquadImages();
+      scrollToIndex(currentIndex);
+    });
+  }
+});
+ 
