@@ -2150,15 +2150,25 @@ body {
 }
 
 .textContent .text,
-.textkontent .text,
 .textContentX .text,
-.textContentC .text,
 .textContentD .text,
 .textContentE .text,
 .textContentF .text,
 .textContentG .text {
   font-size: 14px !important;
   text-align: center;
+}
+
+.textkontent .text{
+    font-size: 14px !important;
+  text-align: left;
+  line-height: 1.8;
+
+}
+.textContentC .text{
+  font-size: 14px !important;
+  text-align: left;
+  line-height: 1.8;
 }
 
 .club-heading {
