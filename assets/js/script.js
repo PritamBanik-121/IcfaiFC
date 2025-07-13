@@ -270,3 +270,79 @@ document.addEventListener('DOMContentLoaded', function() {
     initResponsiveImages();
   });
 });
+
+
+
+
+
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+function animateJerseyShine() {
+    document.querySelectorAll('.jersey-shine .shine-overlay').forEach((shine, idx) => {
+      gsap.set(shine, { opacity: 0.65, x: '-140%' });
+      gsap.to(shine, {
+        x: '120%',
+        duration: 3.5,
+        ease: 'power2.inOut',
+        repeat: -1,
+        delay: idx * 0.5,
+        opacity: 0.85,
+        onStart: () => gsap.set(shine, { opacity: 0.85 }),
+        onRepeat: () => gsap.set(shine, { opacity: 0.85, x: '-140%' })
+      });
+    });
+  }
+  
+  function animateJerseyScrollIn() {
+    document.querySelectorAll('.jersey-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(60px) scale(0.92) rotateY(25deg)';
+    });
+    gsap.to('.jersey-card', {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotateY: 0,
+      duration: 1.3,
+      ease: 'power2.out', 
+      stagger: 0.18,
+      scrollTrigger: {
+        trigger: '.jersey-section',
+        start: 'top 80%',
+        once: true
+      },
+      onStart: () => { console.log('Jersey 3D bounce scroll animation triggered'); }
+    });
+  }
+  
+  function addJerseyCardHoverEffect() {
+    document.querySelectorAll('.jersey-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+          scale: 1.05,
+          duration: 0.3,
+          ease: 'power2.out',
+          zIndex: 10,
+          boxShadow: '0 20px 60px 0 rgba(2,62,138,0.25), 0 8px 20px rgba(0,0,0,0.18)'
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          scale: 1,
+          duration: 0.3,
+          ease: 'power2.out',
+          zIndex: 2,
+          boxShadow: '0 16px 40px 0 rgba(2,62,138,0.25)'
+        });
+      });
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    animateJerseyShine();
+    animateJerseyScrollIn();
+    addJerseyCardHoverEffect();
+  });

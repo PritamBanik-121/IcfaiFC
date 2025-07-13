@@ -2965,3 +2965,220 @@ body.loaded > *:not(.loading-screen) {
   }
 }
 
+.jersey-section {
+    background: linear-gradient(135deg, #b3cfff 0%, #e0e7ff 100%);
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(67,97,238,0.10);
+    margin: 15px 0;
+    transition: background 0.8s cubic-bezier(.4,2,.6,1);
+  }
+  
+  .jersey-section-border {
+    border: none;
+    padding: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    background: transparent;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .jersey-title {
+    font-family: 'Oswald', sans-serif;
+    color: #143b6d;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .jersey-subtitle {
+    font-size: 1.2rem;
+    color: #0a133a;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+  }
+  
+  .jersey-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    align-items: stretch;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+  
+  .jersey-card {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(67, 97, 238, 0.15);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(2, 62, 138, 0.18);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    width: 320px;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 28px 16px 16px 16px;
+    position: relative;
+  }
+  
+  .jersey-image-wrapper {
+    width: 270px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    background: transparent;
+  }
+  
+  .jersey-img {
+    width: 240px;
+    height: 370px;
+    object-fit: contain;
+    background: none;
+    display: block;
+    z-index: 1;
+    border-radius: 4px;
+    margin: 0 auto;
+  }
+  
+  .shine-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(120deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.55) 35%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.55) 65%, rgba(255,255,255,0.0) 100%);
+    width: 120%;
+    height: 100%;
+    opacity: 0.85;
+    filter: blur(2.5px);
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  
+  .jersey-info h3 {
+    color: #023e8a;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  
+  @media (max-width: 900px) {
+    body {
+      padding: 10px;
+    }
+    
+    .jersey-section {
+      padding: 40px 15px;
+      margin: 10px 0;
+      border-radius: 12px;
+    }
+    
+    .jersey-section-border {
+      max-width: 100%;
+      padding: 0;
+    }
+    
+    .jersey-title {
+      font-size: 2rem;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    
+    .jersey-subtitle {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      letter-spacing: 0.5px;
+    }
+    
+    .jersey-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      max-width: 100%;
+    }
+    
+    .jersey-card {
+      width: 100%;
+      max-width: 320px;
+      min-height: 400px;
+      padding: 20px 15px 15px 15px;
+      border-radius: 12px;
+    }
+    
+    .jersey-image-wrapper {
+      width: 100%;
+      max-width: 250px;
+      height: 320px;
+      margin-bottom: 12px;
+    }
+    
+    .jersey-img {
+      width: 100%;
+      max-width: 200px;
+      height: 280px;
+    }
+    
+    .jersey-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      padding: 5px;
+    }
+    
+    .jersey-section {
+      padding: 30px 10px;
+      margin: 5px 0;
+      border-radius: 8px;
+    }
+    
+    .jersey-title {
+      font-size: 1.6rem;
+      letter-spacing: 0.5px;
+    }
+    
+    .jersey-subtitle {
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+    }
+    
+    .jersey-grid {
+      gap: 20px;
+    }
+    
+    .jersey-card {
+      max-width: 280px;
+      min-height: 360px;
+      padding: 15px 10px 10px 10px;
+    }
+    
+    .jersey-image-wrapper {
+      max-width: 220px;
+      height: 280px;
+    }
+    
+    .jersey-img {
+      max-width: 180px;
+      height: 240px;
+    }
+    
+    .jersey-info h3 {
+      font-size: 1rem;
+    }
+  }
