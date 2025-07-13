@@ -122,106 +122,151 @@ window.onload = function () {
 
 
 
-
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
   const carousel = document.getElementById('carousel');
   const items = carousel.querySelectorAll('.carousel-item');
   const dots = document.querySelectorAll('.dot');
   let currentIndex = 0;
-  let isUserScrolling = false;
   let autoScrollInterval;
-  initResponsiveSquad();
-  setupCarousel();
-
-  function setupCarousel() {
+  let isScrolling = false;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  // Initialize the carousel
+  function initCarousel() {
     updateActiveSlide(currentIndex);
-    dots.forEach((dot, i) => {
+    startAutoScroll();
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
-        currentIndex = i;
-        scrollToIndex(currentIndex);
-        resetAutoScroll();
+        goToSlide(index);
       });
     });
-    startAutoScroll();
-    carousel.addEventListener('scroll', handleScroll);
+    
+    // Pause on interaction
+    carousel.addEventListener('mouseenter', pauseAutoScroll);
+    carousel.addEventListener('touchstart', handleTouchStart);
+    carousel.addEventListener('touchend', handleTouchEnd);
+    carousel.addEventListener('mouseleave', resumeAutoScroll);
   }
-
+  
+  // Touch event handlers
+  function handleTouchStart(e) {
+    pauseAutoScroll();
+    touchStartX = e.changedTouches[0].screenX;
+  }
+  
+  function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+    resumeAutoScroll();
+  }
+  
+  function handleSwipe() {
+    const threshold = 50; // Minimum swipe distance to trigger slide change
+    
+    if (touchEndX < touchStartX - threshold) {
+      // Swipe left - next slide
+      nextSlide();
+    } else if (touchEndX > touchStartX + threshold) {
+      // Swipe right - previous slide
+      prevSlide();
+    }
+  }
+  
+  // Move to previous slide
+  function prevSlide() {
+    const prevIndex = (currentIndex - 1 + items.length) % items.length;
+    goToSlide(prevIndex);
+  }
+  
+  // Update active slide and dots
   function updateActiveSlide(index) {
     items.forEach((item, i) => {
       item.classList.remove('active', 'blur-left', 'blur-right');
-
+      
       if (i === index) {
         item.classList.add('active');
-      } else if (i === index - 1) {
+      } else if (i === index - 1 || (index === 0 && i === items.length - 1)) {
         item.classList.add('blur-left');
-      } else if (i === index + 1) {
+      } else if (i === index + 1 || (index === items.length - 1 && i === 0)) {
         item.classList.add('blur-right');
       }
     });
-
+    
     dots.forEach((dot, i) => {
       dot.classList.toggle('active', i === index);
     });
   }
-
-  function scrollToIndex(index) {
-    const itemWidth = items[0].offsetWidth + 20;
-    carousel.scrollTo({
-      left: itemWidth * index,
+  
+  // Scroll to specific slide
+  function goToSlide(index) {
+    if (isScrolling) return;
+    
+    currentIndex = index;
+    isScrolling = true;
+    
+    const item = items[index];
+    const container = carousel;
+    const itemWidth = item.offsetWidth;
+    const containerWidth = container.offsetWidth;
+    const scrollLeft = item.offsetLeft - (containerWidth - itemWidth) / 2;
+    
+    container.scrollTo({
+      left: scrollLeft,
       behavior: 'smooth'
     });
-    updateActiveSlide(index);
-  }
-
-  function handleScroll() {
-    isUserScrolling = true;
-    const scrollLeft = carousel.scrollLeft;
-    const itemWidth = items[0].offsetWidth + 20;
-    const index = Math.round(scrollLeft / itemWidth);
     
-    if (index !== currentIndex) {
-      currentIndex = index;
-      updateActiveSlide(currentIndex);
-    }
+    updateActiveSlide(currentIndex);
     
-    clearTimeout(carousel._scrollTimeout);
-    carousel._scrollTimeout = setTimeout(() => {
-      isUserScrolling = false;
-    }, 200);
+    // Reset scrolling flag after animation completes
+    setTimeout(() => {
+      isScrolling = false;
+    }, 1000);
   }
-
+  
+  // Move to next slide
+  function nextSlide() {
+    const nextIndex = (currentIndex + 1) % items.length;
+    goToSlide(nextIndex);
+  }
+  
+  // Start auto-scroll
   function startAutoScroll() {
-    autoScrollInterval = setInterval(() => {
-      if (!isUserScrolling) {
-        currentIndex = (currentIndex + 1) % items.length;
-        scrollToIndex(currentIndex);
-      }
-    }, 3000);
+    autoScrollInterval = setInterval(nextSlide, 3000);
   }
-
-  function resetAutoScroll() {
+  
+  // Pause auto-scroll
+  function pauseAutoScroll() {
     clearInterval(autoScrollInterval);
+  }
+  
+  // Resume auto-scroll
+  function resumeAutoScroll() {
+    pauseAutoScroll();
     startAutoScroll();
   }
-  function updateSquadImages() {
+  
+  // Initialize responsive images
+  function initResponsiveImages() {
     const squadImages = document.querySelectorAll('.carousel-item img');
     const isMobile = window.innerWidth <= 768;
     
     squadImages.forEach(img => {
       const newSrc = isMobile ? img.dataset.mobileSrc : img.dataset.desktopSrc;
       if (newSrc && img.src !== newSrc) {
-        img.classList.add('loading');
-        img.onload = () => img.classList.remove('loading');
         img.src = newSrc;
       }
     });
   }
-  function initResponsiveSquad() {
-    updateSquadImages();
-    window.addEventListener('resize', function() {
-      updateSquadImages();
-      scrollToIndex(currentIndex);
-    });
-  }
+  
+  // Initialize everything
+  initCarousel();
+  initResponsiveImages();
+  
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    initResponsiveImages();
+  });
 });
- 

@@ -2792,97 +2792,29 @@ body.loaded > *:not(.loading-screen) {
 
 
 
-
-
+/*squad grid krishnayan*/
 .squad-section {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 20px 10px;
-  padding: 30px;
-  position: relative;
-  text-align: center;
-}
-
-.squad-section h2 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 43px;
-  font-weight: 900;
-  margin-bottom: 30px;
-}
-
-
-.carousel-wrapper {
-  position: relative;
-  overflow: hidden;
-  padding: 40px 0;
+  font-size: 2rem;           
+  text-align: center;           
+  color: #222;                   
+  text-transform: uppercase;     
+  letter-spacing: 2px;          
+  margin: 10px 10px;
+  padding: 30px;          
+  position: relative;            
+  font-weight: bold;             
 }
 
 .carousel {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 0 10%;
   gap: 60px;
   scrollbar-width: none;
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel-item {
-  flex: 0 0 80%;
-  scroll-snap-align: center;
-  transition: transform 0.4s, filter 0.4s, opacity 0.4s;
-  filter: none;
-  opacity: 1;
-  border-radius: 10px;
-  overflow: hidden;
-  transform: scale(0.95);
-}
-
-.carousel-item.active {
-  filter: none;
-  opacity: 1;
-  transform: scale(1.05);
-  z-index: 2;
-}
-
-.carousel-item.blur-left,
-.carousel-item.blur-right {
-  filter: blur(4px);
-  opacity: 0.5;
-  z-index: 1;
-}
-
-.dots {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 5px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #000000;
-}
-
-.carousel {
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 10%;
-  gap: 60px;
-  scrollbar-width: none;
+  height: 100%;
+  overflow-y: hidden;
 }
 
 .carousel-item {
@@ -2892,36 +2824,35 @@ body.loaded > *:not(.loading-screen) {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  height: 100%;
+  min-height: 400px;
 }
 
 .carousel-item img {
-  width: 100%;
-  height: auto;
-  display: block;
+  max-height: 100%; 
+  width: auto;
   object-fit: contain;
   border-radius: 10px;
 }
 
 @media (max-width: 768px) {
+  .carousel-wrapper {
+    height: 550px;
+  }
+
   .carousel {
+    height: 100%;
     padding: 0 5%;
     gap: 20px;
   }
 
   .carousel-item {
-    flex: 0 0 85%;
-    height: auto;
+    padding:30px 0;
+    min-height: 380px; 
   }
 
   .carousel-item img {
-    max-height: 60vh;
-    width: auto;
-    margin: 0 auto;
-    object-fit: contain;
-  }
-
-  .squad-section h2 {
-    font-size: 30px;
+    max-height: 500px; 
   }
 }
