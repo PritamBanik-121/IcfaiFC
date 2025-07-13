@@ -18,6 +18,44 @@ body {
   background: #fafafa;
   overflow-x: hidden;
 }
+loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loading-logo {
+  max-width: 200px;
+  height: auto;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* prevent flashing */
+body:not(.loaded) > *:not(.loading-screen) {
+  visibility: hidden;
+}
+
+body.loaded > *:not(.loading-screen) {
+  visibility: visible;
+}
 
 .container {
   margin: 0 auto;
