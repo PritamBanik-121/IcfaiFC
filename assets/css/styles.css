@@ -686,7 +686,8 @@ body.loaded > *:not(.loading-screen) {
   margin: 0 auto;
 }
 
-.section-title {
+.section-title { 
+  font-family: 'Oswald',sans-serif;
   text-align: center;
   font-size: 2.8rem;
   font-weight: 700;
@@ -2864,3 +2865,103 @@ body.loaded > *:not(.loading-screen) {
     font-size: 30px;
   }
 }
+
+
+
+
+
+.last-3-games-section {
+  padding: 70px 0px;
+  background-color: rgb(red, green, blue);
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.last-3-games {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100vw; 
+  margin-left: calc(-1 * (100vw - 100%) / 2); 
+  padding: 0 60px;
+  box-sizing: border-box;
+}
+
+.game-card {
+  background: linear-gradient(135deg, rgba(92, 17, 17, 0.911), rgb(255, 0, 0));
+  color: white;
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.game-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.logos img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.last-3-games-section .View {
+  font-family: 'Raleway',sans-serif;
+  display: inline-block;
+  background-color: red;
+  color: #fff;
+  margin: 30px 0px;
+  padding: 10px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+.last-3-games-section .View:hover{
+ background-color: black;
+  transform: scale(1.03);
+}
+
+@media screen and (max-width:768px) {
+  .last-3-games-section {
+    padding: 20px 1px;
+  }
+  .section-title{
+    font-size: 35px;
+    margin-bottom: 40px;
+
+  }
+  .last-3-games {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+    padding: 0 15px;
+    gap: 25px;
+  }
+  .game-card {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
