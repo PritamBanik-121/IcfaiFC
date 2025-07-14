@@ -929,8 +929,8 @@ body.loaded > *:not(.loading-screen) {
   height: 80px;
   position: fixed;
   top: 0;
-  background: rgba(255, 255, 255, 0.549);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.9);
+  background: #5c1c33b4;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.601);
   backdrop-filter: blur(10px);
   z-index: 10;
 }
@@ -955,7 +955,7 @@ body.loaded > *:not(.loading-screen) {
 
 .links a {
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
   font-weight: 600;

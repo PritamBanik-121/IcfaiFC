@@ -17,12 +17,12 @@
                 <img src="./assets/images/icfai_fc_logo.webp" alt="ICFAI Logo" />
             </div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#results"> Fixtures &  Results</a></li>
-                <li><a href="#achievement-wrapper">Achievements</a></li>
-                <li><a href="#squad">Squad</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#sponsors-section">Sponsors</a></li>
+                <li><a href="./index#home">Home</a></li>
+                <li><a href="./index#achievement-wrapper">Achievements</a></li>
+                <li><a href="./index#results"> Fixtures & Results</a></li>
+                <li><a href="./index#squad">Star Players</a></li>
+                <li><a href="./index#news">News</a></li>
+                <li><a href="./index#sponsors-section">Sponsors</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
@@ -33,23 +33,33 @@
         <div class="nav-container">
             <ul class="links left">
                 <li><a href="./index.html#home">Home</a></li>
-                <li><a href="./index.html#results"> Fixtures &  Results</a></li>
-                <li><a href="./index.html#achievement-wrapper">Achievements</a></li>
+                <li><a href="./index.html#results"> Fixtures & Results</a></li>
+                <li><a href="./index.html#squad">Star Players</a></li>
+
             </ul>
             <div class="logo" id="nav-logo">
                 <img src="./assets/images/icfai_fc_logo.webp" alt="ICFAI Logo" />
             </div>
             <ul class="links right">
-                <li><a href="./index.html#squad">Squad</a></li>
+                <li><a href="./index.html#squad">Star Players</a></li>
                 <li><a href="./index.html#sponsors-section">Sponsors</a></li>
                 <li><a href="./index.html#news">News</a></li>
             </ul>
         </div>
     </div>
-
+    <section class="About">
+        <div class="text">
+            <div class="heading">About  C-Division League</div>
+            <div class="heading-body">The C-Division League, run by the Tripura Football Association (TFA), is the
+                starting level of football in Tripura. It gives new and young players a chance to show their talent and
+                improve. The league is held every year, and teams compete to win and move up to higher divisions. It
+                also helps grow interest in football and brings local communities together.</div>
+        </div>
+    </section>
 
     <section class="fc-club-section">
-        <h2 class="fc-club-title">ICFAI FC RESULT</h2>
+        <h2 class="fc-club-title">C DIVISION FOOTBALL LEAGUE 2025-2026</h2>
+        <h2 class="fc-club-title1">ICFAI FC RESULT</h2>
         <div class="fc-club-cards">
             <div class="fc-club-card">
                 <div class="fc-club-card-row">
@@ -175,7 +185,7 @@
                         <p>UKCC</p>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="fc-club-card">
                 <div class="fc-club-card-row">
                     <div class="teamnames">
@@ -251,6 +261,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <h2 class="fc-club-title">C DIVISION FOOTBALL LEAGUE 2024-2025</h2>
+        <h2 class="fc-club-title1">ICFAI FC RESULT</h2>
+        <div class="fc-club-cards24">
             <div class="fc-club-card">
                 <div class="fc-club-card-row">
                     <div class="teamnames">
@@ -350,7 +364,7 @@
                         <p>SABUJ SANGHA</p>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="fc-club-card">
                 <div class="fc-club-card-row">
                     <div class="teamnames">
@@ -376,6 +390,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <h2 class="fc-club-title23">C DIVISION FOOTBALL LEAGUE 2023-2024</h2>
+        <h2 class="fc-club-title1">ICFAI FC RESULT</h2>
+        <div class="fc-club-cards23">
             <div class="fc-club-card">
                 <div class="fc-club-card-row">
                     <div class="teamnames">
@@ -432,7 +450,7 @@
     <div class="friendly">
         <h2 class="title-friendly">Friendly Matches </h2>
         <div class="friendly-cards">
- <!--fRIENDLY MATCH-->
+            <!--fRIENDLY MATCH-->
             <div class="fc-club-card">
                 <div class="fc-club-card-row">
                     <div class="teamnames">
@@ -459,7 +477,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
     <footer class="site-footer">
         <div class="footer-container">
@@ -531,15 +549,30 @@
             y: -100,
             delay: 0.5,
             scrub: 1,
-
-
-
         })
+        gsap.from('.fc-club-title1', {
+            opacity: 0,
+            duration: 1,
+            y: -100,
+            delay: 0.5,
+            scrub: 1,
+        })
+
+
 
         gsap.from('.fc-club-cards', {
             opacity: 0,
             duration: 1,
             y: 50,
+            delay: 0.5,
+            scrub: 1,
+
+        })
+
+        gsap.from('.text', {
+            opacity: 0,
+            duration: 1,
+            y: -100,
             delay: 0.5,
             scrub: 1,
 
