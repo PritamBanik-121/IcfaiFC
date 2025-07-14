@@ -233,73 +233,73 @@ window.onload = function () {
 
 
 function animateJerseyShine() {
-    document.querySelectorAll('.jersey-shine .shine-overlay').forEach((shine, idx) => {
-      gsap.set(shine, { opacity: 0.65, x: '-140%' });
-      gsap.to(shine, {
-        x: '120%',
-        duration: 3.5,
-        ease: 'power2.inOut',
-        repeat: -1,
-        delay: idx * 0.5,
-        opacity: 0.85,
-        onStart: () => gsap.set(shine, { opacity: 0.85 }),
-        onRepeat: () => gsap.set(shine, { opacity: 0.85, x: '-140%' })
-      });
+  document.querySelectorAll('.jersey-shine .shine-overlay').forEach((shine, idx) => {
+    gsap.set(shine, { opacity: 0.65, x: '-140%' });
+    gsap.to(shine, {
+      x: '120%',
+      duration: 3.5,
+      ease: 'power2.inOut',
+      repeat: -1,
+      delay: idx * 0.5,
+      opacity: 0.85,
+      onStart: () => gsap.set(shine, { opacity: 0.85 }),
+      onRepeat: () => gsap.set(shine, { opacity: 0.85, x: '-140%' })
     });
-  }
-  
-  function animateJerseyScrollIn() {
-    document.querySelectorAll('.jersey-card').forEach(card => {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(60px) scale(0.92) rotateY(25deg)';
-    });
-    gsap.to('.jersey-card', {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      rotateY: 0,
-      duration: 1.3,
-      ease: 'power2.out', 
-      stagger: 0.18,
-      scrollTrigger: {
-        trigger: '.jersey-section',
-        start: 'top 80%',
-        once: true
-      },
-      onStart: () => { console.log('Jersey 3D bounce scroll animation triggered'); }
-    });
-  }
-  
-  function addJerseyCardHoverEffect() {
-    document.querySelectorAll('.jersey-card').forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        gsap.to(card, {
-          scale: 1.05,
-          duration: 0.3,
-          ease: 'power2.out',
-          zIndex: 10,
-          boxShadow: '0 20px 60px 0 rgba(2,62,138,0.25), 0 8px 20px rgba(0,0,0,0.18)'
-        });
-      });
-      card.addEventListener('mouseleave', () => {
-        gsap.to(card, {
-          scale: 1,
-          duration: 0.3,
-          ease: 'power2.out',
-          zIndex: 2,
-          boxShadow: '0 16px 40px 0 rgba(2,62,138,0.25)'
-        });
-      });
-    });
-  }
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    animateJerseyShine();
-    animateJerseyScrollIn();
-    addJerseyCardHoverEffect();
   });
+}
 
-   let currentSlide = 0;
+function animateJerseyScrollIn() {
+  document.querySelectorAll('.jersey-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(60px) scale(0.92) rotateY(25deg)';
+  });
+  gsap.to('.jersey-card', {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotateY: 0,
+    duration: 1.3,
+    ease: 'power2.out',
+    stagger: 0.18,
+    scrollTrigger: {
+      trigger: '.jersey-section',
+      start: 'top 80%',
+      once: true
+    },
+    onStart: () => { console.log('Jersey 3D bounce scroll animation triggered'); }
+  });
+}
+
+function addJerseyCardHoverEffect() {
+  document.querySelectorAll('.jersey-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card, {
+        scale: 1.05,
+        duration: 0.3,
+        ease: 'power2.out',
+        zIndex: 10,
+        boxShadow: '0 20px 60px 0 rgba(2,62,138,0.25), 0 8px 20px rgba(0,0,0,0.18)'
+      });
+    });
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, {
+        scale: 1,
+        duration: 0.3,
+        ease: 'power2.out',
+        zIndex: 2,
+        boxShadow: '0 16px 40px 0 rgba(2,62,138,0.25)'
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  animateJerseyShine();
+  animateJerseyScrollIn();
+  addJerseyCardHoverEffect();
+});
+
+ let currentSlide = 0;
     let totalSlides = 3;
     let autoplayInterval = null;
     const autoplayDelay = 3000;
@@ -310,6 +310,28 @@ function animateJerseyShine() {
     function initCarousel() {
         updateCarousel();
         initVideoAnimations();
+        
+        // FIXED: Added click event listeners to dots for navigation
+        document.querySelectorAll('.dotts').forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                stopAutoplay();
+                startAutoplay();
+            });
+        });
+        
+        // FIXED: Added click event listeners to navigation buttons (prev/next)
+        document.querySelector('.carousel-nav.prev').addEventListener('click', () => {
+            previousSlide(true);
+            stopAutoplay();
+            startAutoplay();
+        });
+        
+        document.querySelector('.carousel-nav.next').addEventListener('click', () => {
+            nextSlide(true);
+            stopAutoplay();
+            startAutoplay();
+        });
         // Add keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') previousSlide();
@@ -449,7 +471,8 @@ function animateJerseyShine() {
         document.querySelectorAll('.video-container').forEach((container, index) => {
             container.classList.toggle('active', index === currentSlide);
         });
-        document.querySelectorAll('.dot').forEach((dot, index) => {
+        // FIXED: Changed from '.dot' to '.dotts' to match HTML/CSS class names
+        document.querySelectorAll('.dotts').forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
         });
     }
@@ -466,6 +489,21 @@ function animateJerseyShine() {
     function goToSlide(slideIndex) {
         currentSlide = slideIndex;
         updateCarousel(true);
+    }
+    
+    // FIXED: Added missing autoplay functions that were being called but not defined
+    function startAutoplay() {
+        if (autoplayInterval) clearInterval(autoplayInterval);
+        autoplayInterval = setInterval(() => {
+            nextSlide(true);
+        }, autoplayDelay);
+    }
+    
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
     }
   
     // GSAP Animations
@@ -551,4 +589,3 @@ function animateJerseyShine() {
     // Pause autoplay when page is not visible
     document.addEventListener('visibilitychange', () => {
     });
-    
