@@ -551,3 +551,4 @@ function animateJerseyShine() {
     // Pause autoplay when page is not visible
     document.addEventListener('visibilitychange', () => {
     });
+    
