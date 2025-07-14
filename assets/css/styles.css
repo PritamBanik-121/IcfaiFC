@@ -3328,7 +3328,7 @@ padding-bottom: 56.25%; /* 16:9 ratio */
     margin-top: 30px;
 }
 
-.dot {
+.dotts {
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -3339,14 +3339,14 @@ padding-bottom: 56.25%; /* 16:9 ratio */
     border: 2px solid transparent;
 }
 
-.dot.active {
+.dotts.active {
     background: rgb(50, 38, 220);
     transform: scale(1.3);
     box-shadow: 0 0 20px rgba(31, 9, 175, 0.6);
     border-color: rgba(255,255,255,0.5);
 }
 
-.dot:hover {
+.dotts:hover {
     background: rgba(62, 7, 191, 0.7);
     transform: scale(1.1);
 }
