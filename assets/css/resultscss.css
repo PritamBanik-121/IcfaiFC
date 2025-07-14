@@ -23,12 +23,8 @@ body {
   align-items: center;
   justify-content: center;
   background: #0f0c29;
-  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .fc-club-title {
@@ -36,7 +32,14 @@ body {
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 40px;
-  margin-top: 20px;
+  margin-top: 0px;
+}
+.fc-club-title2 {
+  color: #fff;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  margin-top: 70px;
 }
 
 .fc-club-title1 {
@@ -238,6 +241,10 @@ body {
     margin-top: 60px;
     margin-bottom: 30px;
   }
+  .fc-club-title2 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
 
   .fc-club-title23 {
     margin-top: 60px;
@@ -252,15 +259,13 @@ body {
     grid-template-rows: repeat(8, 1fr);
     gap: 14px;
   }
+  
 }
 
 .friendly {
   background: #0f0c29;
-  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -273,15 +278,20 @@ body {
   text-align: center;
   font-size: 2.2rem;
   margin-top: 50px;
+  margin-bottom: 40px;
   font-family: 'Oswald', sans-serif;
 }
 
 .friendly-cards {
-  display: flex;
+display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 30px;
+  justify-items: center;
   align-items: center;
-  justify-content: center;
-  margin: 50px;
-  gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .About {
@@ -319,6 +329,11 @@ body {
   font-size: 25px;
 }
 
+.heading-body a {
+  font-weight: 700;
+  color: #f3f3f3;
+}
+
 @media screen and (max-width:768px) {
   .text{
     padding: 10px;
@@ -331,6 +346,13 @@ body {
   }
   .heading-body{
     font-size: 18px;
+  }
+  .friendly-cards{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 18px;
+    margin: 10px;
+    margin-bottom: 50px;
   }
 }
 
