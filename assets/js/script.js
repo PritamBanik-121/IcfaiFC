@@ -298,3 +298,256 @@ function animateJerseyShine() {
     animateJerseyScrollIn();
     addJerseyCardHoverEffect();
   });
+
+   let currentSlide = 0;
+    let totalSlides = 3;
+    let autoplayInterval = null;
+    const autoplayDelay = 3000;
+
+    const carouselTrack = document.getElementById('carouselTrack');
+    const carouselDots = document.getElementById('carouselDots');
+    // Initialize carousel
+    function initCarousel() {
+        updateCarousel();
+        initVideoAnimations();
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') previousSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+        // Touch/swipe support
+        let startX = 0;
+        let startY = 0;
+        const carousel = document.querySelector('.carousel-container');
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+        carousel.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            const deltaX = endX - startX;
+            const deltaY = endY - startY;
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+                if (deltaX > 0) {
+                    previousSlide();
+                } else {
+                    nextSlide();
+                }
+            }
+        });
+        // Mouse wheel support
+        let wheelTimeout = null;
+        carousel.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (wheelTimeout) return;
+            if (e.deltaY > 0) {
+                nextSlide(true);
+            } else if (e.deltaY < 0) {
+                previousSlide(true);
+            }
+            wheelTimeout = setTimeout(() => {
+                wheelTimeout = null;
+            }, 400); 
+        });
+
+        // Mouse drag-to-slide support
+        let isDragging = false;
+        let dragStartX = 0;
+        let dragCurrentX = 0;
+        let dragStartTranslate = 0;
+        let hasDragged = false;
+        let dragFrame = null;
+
+        function onDragMove(e) {
+            if (!isDragging) return;
+            dragCurrentX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+            if (Math.abs(dragCurrentX - dragStartX) > 5) hasDragged = true;
+            if (dragFrame) cancelAnimationFrame(dragFrame);
+            dragFrame = requestAnimationFrame(() => {
+                const deltaX = dragCurrentX - dragStartX;
+                const dragScale = 0.1; 
+                const translateX = dragStartTranslate + deltaX * dragScale;
+                gsap.set(carouselTrack, { x: translateX });
+            });
+        }
+
+        function onDragEnd(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            carousel.style.cursor = 'grab';
+            document.body.style.userSelect = '';
+            document.removeEventListener('mousemove', onDragMove);
+            document.removeEventListener('mouseup', onDragEnd);
+            document.removeEventListener('mouseleave', onDragEnd);
+            document.removeEventListener('touchmove', onDragMove);
+            document.removeEventListener('touchend', onDragEnd);
+            document.removeEventListener('touchcancel', onDragEnd);
+            const deltaX = dragCurrentX - dragStartX;
+            const threshold = Math.min(80, carousel.offsetWidth / 6);
+            if (hasDragged && Math.abs(deltaX) > threshold) {
+                if (deltaX < 0) {
+                    nextSlide(true);
+                } else {
+                    previousSlide(true);
+                }
+            } else {
+                gsap.to(carouselTrack, {
+                    x: -currentSlide * carousel.offsetWidth,
+                    duration: 0.45,
+                    ease: 'power3.out'
+                });
+            }
+            startAutoplay();
+        }
+
+        carousel.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            dragStartX = e.clientX;
+            dragCurrentX = e.clientX;
+            dragStartTranslate = -currentSlide * carousel.offsetWidth;
+            hasDragged = false;
+            stopAutoplay();
+            carousel.style.cursor = 'grabbing';
+            document.body.style.userSelect = 'none';
+            document.addEventListener('mousemove', onDragMove);
+            document.addEventListener('mouseup', onDragEnd);
+            document.addEventListener('mouseleave', onDragEnd);
+        });
+        carousel.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            dragStartX = e.touches[0].clientX;
+            dragCurrentX = e.touches[0].clientX;
+            dragStartTranslate = -currentSlide * carousel.offsetWidth;
+            hasDragged = false;
+            stopAutoplay();
+            carousel.style.cursor = 'grabbing';
+            document.body.style.userSelect = 'none';
+            document.addEventListener('touchmove', onDragMove, { passive: false });
+            document.addEventListener('touchend', onDragEnd);
+            document.addEventListener('touchcancel', onDragEnd);
+        });
+
+        // Autoplay
+        startAutoplay();
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+
+    }
+
+    function updateCarousel(snap = false) {
+        const translateX = -currentSlide * carouselTrack.parentElement.offsetWidth;
+        if (snap) {
+            gsap.to(carouselTrack, {
+                x: translateX,
+                duration: 0.45,
+                ease: "power3.out"
+            });
+        } else {
+            gsap.set(carouselTrack, { x: translateX });
+        }
+        document.querySelectorAll('.video-container').forEach((container, index) => {
+            container.classList.toggle('active', index === currentSlide);
+        });
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    // Navigation functions
+    function nextSlide(snap = false) {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel(snap);
+    }
+    function previousSlide(snap = false) {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel(snap);
+    }
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel(true);
+    }
+  
+    // GSAP Animations
+    function initVideoAnimations() {
+        // Title animation
+        gsap.fromTo('.video-section-title',
+            {
+                opacity: 0,
+                y: -50,
+                scale: 0.8,
+                rotationX: 15
+            },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                rotationX: 0,
+                duration: 1.2,
+                ease: "back.out(1.7)"
+            }
+        );
+        // Carousel container animation
+        gsap.fromTo('.carousel-container',
+            {
+                opacity: 0,
+                y: 50,
+                scale: 0.9
+            },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 1,
+                ease: "power3.out",
+                delay: 0.3,
+                scrollTrigger: {
+                    trigger: '.carousel-container',
+                    start: 'top 85%',
+                    end: 'bottom 15%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+        // Controls animation
+        gsap.fromTo('.carousel-dots',
+            {
+                opacity: 0,
+                y: 30
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                stagger: 0.1,
+                delay: 0.8,
+                scrollTrigger: {
+                    trigger: '.carousel-container',
+                    start: 'top 85%',
+                    end: 'bottom 15%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+        // Background animation
+       
+        // Title glow effect
+        gsap.to('.video-section-title', {
+            textShadow: "0 0 30px rgba(102, 50, 247, 0.8), 0 0 60px rgba(75, 25, 239, 0.4)",
+            duration: 2,
+            ease: "power2.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 1
+        });
+    }
+
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        initCarousel();
+    });
+
+    // Pause autoplay when page is not visible
+    document.addEventListener('visibilitychange', () => {
+    });

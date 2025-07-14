@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ICFAI FC - Football Club</title>
+  <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -371,7 +372,58 @@
         </div>
       </section>  
 
+<section class="featured-video-section">
+        <h2 class="video-section-title">FEATURED VIDEOS</h2>
 
+
+    <div class="carousel-container">
+        <button class="carousel-nav prev" onclick="previousSlide()">‹</button>
+        <button class="carousel-nav next" onclick="nextSlide()">›</button>
+        <div class="carousel-track" id="carouselTrack">
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+                <div class="video-container active">
+                    <iframe 
+                        src="https://www.youtube.com/embed/SiVEIzfYAQk?autoplay=1&mute=1&loop=1&playlist=SiVEIzfYAQk"
+                        title="Amazing Nature Documentary"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/P8DWaBqI-jM?autoplay=1&mute=1&loop=1&playlist=P8DWaBqI-jM"
+                        title="Tech Innovation Showcase"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/DFkMkslrrcs?autoplay=1&mute=1&loop=1&playlist=DFkMkslrrcs"
+                        title="Creative Arts Masterpiece"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- Navigation Dots -->
+    <div class="carousel-dots" id="carouselDots">
+        <div class="dot active" onclick="goToSlide(0)"></div>
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+    </div>
+    
+</section>
 
 
 
