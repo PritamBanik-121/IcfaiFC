@@ -330,8 +330,8 @@ display: grid;
 }
 
 .heading-body a {
-  font-weight: 700;
   color: #f3f3f3;
+  font-weight: 700;
 }
 
 @media screen and (max-width:768px) {
