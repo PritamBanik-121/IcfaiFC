@@ -3107,9 +3107,7 @@ body.loaded > *:not(.loading-screen) {
   }
   
   @media (max-width: 900px) {
-    body {
-      padding: 10px;
-    }
+   
     
     .jersey-section {
       padding: 40px 15px;
@@ -3168,10 +3166,7 @@ body.loaded > *:not(.loading-screen) {
   }
   
   @media (max-width: 480px) {
-    body {
-      padding: 5px;
-    }
-    
+  
     .jersey-section {
       padding: 30px 10px;
       margin: 5px 0;
