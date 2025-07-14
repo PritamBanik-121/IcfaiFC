@@ -2803,7 +2803,10 @@ body.loaded > *:not(.loading-screen) {
   padding: 30px;          
   position: relative;            
 }
-
+.dots {
+    text-align: center;
+    margin-top: 15px;
+}
 .squad-section h2 {
   font-family: 'Oswald', sans-serif;
   font-size: 43px;
