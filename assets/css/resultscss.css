@@ -17,12 +17,18 @@ body {
   margin: 0;
   padding: 32px 0;
   font-family: "Oswald", sans-serif;
-  background: linear-gradient(135deg, #4f5c72 0%, #233570 100%);
   box-shadow: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #0f0c29;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .fc-club-title {
@@ -83,26 +89,28 @@ body {
   border-radius: 50%;
   width: 70px;
   height: 70px;
-  overflow: hidden; /* ✅ ensures image doesn't spill */
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
 }
-.logocont{
+
+.logocont {
   margin: 5px;
 }
-.logocont1{
+
+.logocont1 {
   margin: 10px;
 }
+
 .team-logo img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 
 
-.teamnames{
+.teamnames {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,23 +118,33 @@ body {
   text-align: center;
   word-wrap: break-word;
   white-space: normal;
-  max-width: 120px;   /* Adjust as needed */
+  max-width: 120px;
   margin: 0 5px;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  width: 76.47px;
 }
+
 .fc-club-match-info {
   flex: 1;
-  text-align: center;
-  margin: 8 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .fc-club-date {
   color: #4b5563;
-  font-size: 20px;
-  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 14px;
+  text-transform: capitalize;
 }
 
 .fc-club-score {
-  font-size: 25px;
+  font-size: 30px;
 
   color: #1e293b;
   margin-bottom: 4px;
@@ -162,7 +180,8 @@ body {
     height: 140px;
     min-height: 140px;
   }
-  .fc-club-title{
+
+  .fc-club-title {
     margin-top: 60px;
     margin-bottom: 30px;
   }
@@ -176,8 +195,35 @@ body {
   }
 }
 
+.friendly {
+  background: #0f0c29;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Oswald",sans-serif;
+}
 
+.title-friendly {
+  color: #fff;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-top: 50px ;
+  font-family: 'Oswald', sans-serif;
+}
 
+.friendly-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+  gap: 10px;
+}
 
 .nav {
   margin-top: 20px;
@@ -408,7 +454,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "raleway",sans-serif;
+  font-family: "raleway", sans-serif;
 }
 
 .footer-container {
