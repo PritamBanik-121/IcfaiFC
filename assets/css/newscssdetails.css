@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  padding: 30px;
+  gap: 30px;
+  margin: auto;
+  background: #a8c0ff;
+  background: -webkit-linear-gradient(to right, #3f2b96, #a8c0ff);
+  background: linear-gradient(to right, #3f2b96, #a8c0ff);
+}
+  .news-content {
+    flex: 3;
+  }
+
+  .news-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .news-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .news-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0b2341;
+    padding: 16px;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+
+  .meta {
+    color: #888;
+    padding: 0 16px 16px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .meta .category {
+    background-color: #d01313;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+
+  .news-card p {
+    padding: 0 20px 20px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #5c6b7a;
+    text-align: justify;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+  }
+
+  .tags {
+    padding: 0 20px 20px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .tags span {
+    background: #eee;
+    padding: 4px 8px;
+    margin: 5px 5px 0 0;
+    display: inline-block;
+    border-radius: 4px;
+  }
+
+  .share {
+    margin-top: 20px;
+    padding: 0 20px 20px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .share a img {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+
+  .sidebar {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .post-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+
+  .post-nav a {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    background-color: #2c1a47;
+    transition: background 0.3s;
+  }
+
+  .post-nav a:hover {
+    background-color: #452a6b;
+  }

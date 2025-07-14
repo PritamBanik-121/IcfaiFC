@@ -537,7 +537,7 @@ body.loaded > *:not(.loading-screen) {
 .news {
   padding: 100px 20px;
   background: #f5f6fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Oswald",sans-serif;
 }
 
 .news .container {
@@ -608,8 +608,14 @@ body.loaded > *:not(.loading-screen) {
   color: #444;
   line-height: 1.6;
   margin-bottom: 20px;
+  font-family: 'Raleway',sans-serif;
 }
-
+.readbtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 .read-more {
   align-self: flex-start;
   padding: 8px 16px;
