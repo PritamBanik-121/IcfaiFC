@@ -28,6 +28,7 @@ body {
   font-family: "Oswald", sans-serif;
   color: white;
   font-size: 40px;
+  margin-top: 175px
 }
 
 .grid-container {
@@ -53,7 +54,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 300px);
   }
-
+  .heading h1 {
+  font-size: 40px;
+  margin-top: 100px
+}
 }
 
 @media screen and (max-width: 480px) {
@@ -107,6 +111,228 @@ a:hover .box {
   transition: opacity 0.3s ease;
 }
 
+
+
+.nav {
+  margin-top: 20px;
+  height: 60px;
+}
+
+#nav-logo img {
+  height: 80px;
+}
+
+.navbar {
+  display: none;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: transparent;
+}
+
+.navbar-container {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar a {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+.logo img {
+  height: 32px;
+  display: block;
+}
+
+#logo1 {
+  visibility: hidden;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  margin: 0;
+  align-items: center;
+}
+
+.nav-links li a {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #e93515;
+  text-decoration: underline;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #000;
+}
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+  }
+
+  #logo1 {
+    visibility: visible;
+  }
+
+  #logo2 {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1001;
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    gap: 0;
+    margin-top: 0;
+    text-align: center;
+    padding: 0;
+  }
+
+  .nav-links.show {
+    display: flex !important;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    color: #000;
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+.nav {
+  background: #ededed;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  margin: 40px auto 0 auto;
+  border-radius: 2px;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  background: #5c1c33b4;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.373);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.links a:hover {
+  color: #e93515;
+  text-decoration: underline;
+}
+
+.links.left {
+  justify-content: center;
+  flex: 1;
+}
+
+.links.right {
+  justify-content: center;
+  flex: 1;
+}
+
+#nav-logo {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -20%);
+  z-index: 2;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+}
+
+#nav-logo img {
+  height: 130px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+}
+
+
 .site-footer {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(10, 10, 10, 0.1)), url('../images/back.webp');
   background-size: cover;
@@ -116,6 +342,7 @@ a:hover .box {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Raleway',sans-serif;
 }
 
 .footer-container {
@@ -230,12 +457,6 @@ a:hover .box {
 }
 
 
-@media screen and (width > 930) {
-  .sponsors-section {
-    height: 100vh;
-  }
-
-}
 
 @media screen and (min-width: 769px) and (max-width: 940px) {
   .footer-container {
@@ -251,40 +472,6 @@ a:hover .box {
 }
 
 @media (max-width: 768px) {
-
-  .section-title h2,
-  .instagram-section h2 {
-    font-size: 2rem;
-  }
-
-  .logo span {
-
-    font-size: 20px;
-  }
-
-  .logoG {
-    width: 90%;
-  }
-
-  .sponsors-section,
-  .instagram-section {
-    height: auto;
-  }
-
-  .post {
-    max-width: 100%;
-    width: 100%;
-    height: 180px;
-    aspect-ratio: unset;
-    min-width: 0;
-  }
-
-  .instagram-grid iframe {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-  }
-
   .footer-container {
     flex-direction: column;
     align-items: center;

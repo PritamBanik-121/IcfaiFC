@@ -6,9 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
     <link rel="stylesheet" href="./assets/css/newscss.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo" id="logo1">
+                <img src="./assets/images/icfai_fc_logo.webp" alt="ICFAI Logo" />
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="./index.html#home">Home</a></li>
+                <li><a href="./index.html#results"> Fixtures & Results</a></li>
+                <li><a href="./index.html#achievement-wrapper">Achievements</a></li>
+                <li><a href="./index.html#squad">Star Players</a></li>
+                <li><a href="./index.html#news">News</a></li>
+                <li><a href="./index.html#sponsors-section">Sponsors</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="nav">
+        <div class="nav-container">
+            <ul class="links left">
+                <li><a href="./index.html#home">Home</a></li>
+                <li><a href="./index.html#results"> Fixtures & Results</a></li>
+                <li><a href="./index.html#achievement-wrapper">Achievements</a></li>
+            </ul>
+            <div class="logo" id="nav-logo">
+                <img src="./assets/images/icfai_fc_logo.webp" alt="ICFAI Logo" />
+            </div>
+            <ul class="links right">
+                <li><a href="./index.html#squad">Star Players</a></li>
+                <li><a href="./index.html#sponsors-section">Sponsors</a></li>
+                <li><a href="./index.html#news">News</a></li>
+            </ul>
+        </div>
+    </div>
     <div class="container">
         <div class="heading">
             <h1>News</h1>
@@ -187,7 +223,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
         integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>
+    <script>
+  const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, {
+            threshold: 0.2,
+        });
+
+        document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Close navbar when clicking on a navigation link
+        const navLinkItems = document.querySelectorAll('.nav-links a');
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('show')) {
+                    navLinks.classList.remove('show');
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (
+                navLinks.classList.contains('show') &&
+                !navLinks.contains(event.target) &&
+                !hamburger.contains(event.target)
+            ) {
+                navLinks.classList.remove('show');
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 
 </html>
