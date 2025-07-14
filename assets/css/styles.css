@@ -2807,6 +2807,19 @@ body.loaded > *:not(.loading-screen) {
     text-align: center;
     margin-top: 15px;
 }
+.dot.active {
+  background-color: #000000;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
 .squad-section h2 {
   font-family: 'Oswald', sans-serif;
   font-size: 43px;
@@ -2826,6 +2839,11 @@ body.loaded > *:not(.loading-screen) {
   overflow-y: hidden;
 }
 
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0;
+}
 .carousel-item {
   flex: 0 0 80%;
   scroll-snap-align: center;
