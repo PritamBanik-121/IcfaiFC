@@ -544,7 +544,7 @@ body.loaded > *:not(.loading-screen) {
   margin: 0 auto;
 }
 
-.section-title { 
+.news-title { 
   font-family: 'Oswald',sans-serif;
   text-align: center;
   font-size: 2.8rem;
@@ -553,6 +553,7 @@ body.loaded > *:not(.loading-screen) {
   margin-top: 10px;
   color: #1e1e1e;
   position: relative;
+  text-shadow: 2px 2px 4px rgba(94, 91, 91, 0.8);
 }
 
 .news-grid {
