@@ -122,6 +122,7 @@ window.onload = function () {
 
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
   const carousel = document.getElementById('carousel');
   const items = carousel.querySelectorAll('.carousel-item');
@@ -132,45 +133,150 @@ document.addEventListener('DOMContentLoaded', function () {
   initResponsiveSquad();
   setupCarousel();
 
-  function setupCarousel() {
-    updateActiveSlide(currentIndex);
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        currentIndex = i;
-        scrollToIndex(currentIndex);
-        resetAutoScroll();
-      });
+function setupCarousel() {
+  updateActiveSlide(currentIndex);
+  
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      currentIndex = i;
+      scrollToIndex(currentIndex);
+      resetAutoScroll();
     });
+  });
+
+  // Handle mobile touch events
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let isDragging = false;
+  
+  carousel.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    pauseAutoScroll();
+    isDragging = true;
+  }, {passive: true});
+
+  carousel.addEventListener('touchmove', (e) => {
+    if (isDragging) {
+      touchEndX = e.changedTouches[0].screenX;
+      const deltaX = touchEndX - touchStartX;
+      const itemWidth = items[0].offsetWidth + 20;
+      const scrollPosition = itemWidth * currentIndex - deltaX;
+      carousel.scrollLeft = scrollPosition;
+    }
+  }, {passive: true});
+
+  carousel.addEventListener('touchend', (e) => {
+    if (isDragging) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      isDragging = false;
+    }
     startAutoScroll();
-    carousel.addEventListener('scroll', handleScroll);
-  }
+  }, {passive: true});
 
-  function updateActiveSlide(index) {
-    items.forEach((item, i) => {
-      item.classList.remove('active', 'blur-left', 'blur-right');
+  // --- Desktop Mouse Dragging ---
+  let isMouseDown = false;
+  let mouseStartX = 0;
+  let scrollStartX = 0;
 
-      if (i === index) {
-        item.classList.add('active');
-      } else if (i === index - 1) {
-        item.classList.add('blur-left');
-      } else if (i === index + 1) {
-        item.classList.add('blur-right');
-      }
-    });
+  carousel.addEventListener('mousedown', (e) => {
+    // Only left mouse button
+    if (e.button !== 0) return;
+    isMouseDown = true;
+    mouseStartX = e.pageX;
+    scrollStartX = carousel.scrollLeft;
+    pauseAutoScroll();
+    carousel.classList.add('dragging');
+  });
 
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-    });
-  }
+  carousel.addEventListener('mousemove', (e) => {
+    if (!isMouseDown) return;
+    const deltaX = e.pageX - mouseStartX;
+    carousel.scrollLeft = scrollStartX - deltaX;
+  });
 
-  function scrollToIndex(index) {
-    const itemWidth = items[0].offsetWidth + 20;
-    carousel.scrollTo({
-      left: itemWidth * index,
-      behavior: 'smooth'
-    });
-    updateActiveSlide(index);
-  }
+  carousel.addEventListener('mouseup', () => {
+    if (isMouseDown) {
+      isMouseDown = false;
+      carousel.classList.remove('dragging');
+      startAutoScroll();
+    }
+  });
+
+  carousel.addEventListener('mouseleave', () => {
+    if (isMouseDown) {
+      isMouseDown = false;
+      carousel.classList.remove('dragging');
+      startAutoScroll();
+    }
+  });
+
+  startAutoScroll();
+  carousel.addEventListener('scroll', handleScroll);
+}
+
+function updateActiveSlide(index) {
+  items.forEach((item, i) => {
+    item.classList.remove('active', 'blur-left', 'blur-right');
+
+    if (i === index) {
+      item.classList.add('active');
+      // Center the active slide
+      gsap.to(item, {
+        scale: 1,
+        filter: 'blur(0)',
+        opacity: 1,
+        duration: 0.3
+      });
+    } else if (i === index - 1 || (index === 0 && i === items.length - 1)) {
+      item.classList.add('blur-left');
+      // Apply left blur effect
+      gsap.to(item, {
+        scale: 0.9,
+        filter: 'blur(4px)',
+        opacity: 0.8,
+        duration: 0.3
+      });
+    } else if (i === index + 1 || (index === items.length - 1 && i === 0)) {
+      item.classList.add('blur-right');
+      // Apply right blur effect
+      gsap.to(item, {
+        scale: 0.9,
+        filter: 'blur(4px)',
+        opacity: 0.8,
+        duration: 0.3
+      });
+    } else {
+      // More blur for non-adjacent items
+      gsap.to(item, {
+        scale: 0.85,
+        filter: 'blur(6px)',
+        opacity: 0.6,
+        duration: 0.3
+      });
+    }
+  });
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+function scrollToIndex(index) {
+  const itemWidth = items[0].offsetWidth + 20;
+  const scrollPosition = itemWidth * index;
+  const isMobile = window.innerWidth <= 768;
+  const duration = isMobile ? 0.8 : 0.5;
+  
+  gsap.to(carousel, {
+    scrollTo: { x: scrollPosition, autoKill: false },
+    duration: duration,
+    ease: "power2.out",
+    onComplete: () => {
+      updateActiveSlide(index);
+    }
+  });
+}
 
   function handleScroll() {
     isUserScrolling = true;
@@ -190,12 +296,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function startAutoScroll() {
+    clearInterval(autoScrollInterval); 
+    const isMobile = window.innerWidth <= 768;
+    const interval = isMobile ? 3000 : 5000;
     autoScrollInterval = setInterval(() => {
       if (!isUserScrolling) {
         currentIndex = (currentIndex + 1) % items.length;
         scrollToIndex(currentIndex);
       }
-    }, 3000);
+    }, interval);
   }
 
   function resetAutoScroll() {
@@ -223,6 +332,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+
+
 
 
 
