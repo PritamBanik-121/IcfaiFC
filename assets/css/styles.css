@@ -3651,6 +3651,7 @@ body.loaded>*:not(.loading-screen) {
 
   .featured-video-section h2 {
     font-size: 2.2rem;
+    color: #f0f0f0;
   }
 
   .carousel-nav {
