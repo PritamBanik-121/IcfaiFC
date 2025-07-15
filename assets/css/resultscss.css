@@ -540,8 +540,8 @@ display: grid;
   font-weight: 600;
 }
 
-.links a:hover {
-  color: #e93515;
+.nav .links a:hover {
+  color: #f3f900;
   text-decoration: underline;
 }
 
@@ -623,9 +623,7 @@ display: grid;
   color: #f3f900;
 }
 
-.last:hover{
-  color: #f3f900;
-}
+
 #middle-column:hover{
   color: #f3f900;
 }
