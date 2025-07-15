@@ -3463,7 +3463,6 @@ body.loaded>*:not(.loading-screen) {
 }
 
 .video-section-title {
-  opacity: 0;
   transform: translateY(-50px);
   will-change: transform, opacity;
 }
