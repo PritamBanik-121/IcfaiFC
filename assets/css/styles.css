@@ -540,8 +540,7 @@ body.loaded > *:not(.loading-screen) {
   font-family: "Oswald",sans-serif;
 }
 
-.news .container {
-  max-width: 1200px;
+.news .news-container {
   margin: 0 auto;
 }
 
