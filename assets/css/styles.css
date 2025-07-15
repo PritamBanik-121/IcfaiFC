@@ -2728,7 +2728,6 @@ body.loaded>*:not(.loading-screen) {
   gap: 60px;
   scrollbar-width: none;
   height: auto;
-  max-height: 500px;
   overflow-y: hidden;
   margin-bottom: 20px;
 }
