@@ -650,7 +650,9 @@ display: grid;
   text-decoration: none;
 }
 
-
+.footer-column a:hover{
+ text-decoration: underline;
+}
 
 .footer-column.first-column {
   align-items: center;
