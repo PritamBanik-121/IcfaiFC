@@ -341,6 +341,8 @@ function scrollToIndex(index) {
 
 
 
+
+
 function animateJerseyShine() {
   const shineElements = document.querySelectorAll('.jersey-shine .shine-overlay');
   if (!shineElements.length) {
