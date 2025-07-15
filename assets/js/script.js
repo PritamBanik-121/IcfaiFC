@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
       loadingScreen.remove();
     }, 500);
-  }, 3000);
+  }, 2000);
 });
 
 
