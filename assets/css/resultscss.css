@@ -619,14 +619,10 @@ display: grid;
 }
 
 
-.middle:hover h3, a{
-  color: #f3f900;
-}
 
 
-#middle-column:hover{
-  color: #f3f900;
-}
+
+
 
 .foter-text p {
   white-space: normal;
