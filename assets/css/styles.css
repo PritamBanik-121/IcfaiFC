@@ -3227,6 +3227,56 @@ body.loaded>*:not(.loading-screen) {
   user-select: none;
 }
 
+.jersey-card {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+}
+
+.jersey-card img {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.jersey-image-wrapper {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+}
+
+/* Mobile specific overrides */
+@media (max-width: 768px) {
+  .jersey-card {
+    touch-action: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+  }
+
+  .jersey-card * {
+    pointer-events: none !important;
+  }
+
+  .jersey-card img {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
 /* Base styles for jersey shine effect  */
 .jersey-shine {
   position: relative;

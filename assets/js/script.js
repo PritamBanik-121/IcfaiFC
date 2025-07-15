@@ -230,8 +230,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// REPLACE YOUR EXISTING JERSEY FUNCTIONS WITH THIS CODE
-
 function animateJerseyShine() {
   const shineElements = document.querySelectorAll('.jersey-shine .shine-overlay');
   if (!shineElements.length) {
@@ -289,16 +287,20 @@ function animateJerseyScrollIn() {
   });
 }
 
+// COMPLETELY REMOVE TOUCH INTERACTIONS ON MOBILE
 function addJerseyCardHoverEffect() {
   const jerseyCards = document.querySelectorAll('.jersey-card');
   if (!jerseyCards.length) return;
 
-  // Check if device supports hover (not touch-only)
-  const hasHover = window.matchMedia('(hover: hover)').matches;
+  // Multiple mobile detection methods
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+    window.innerWidth <= 768 ||
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0;
 
   jerseyCards.forEach(card => {
-    if (hasHover) {
-      // Desktop hover effects
+    if (!isMobile) {
+      // DESKTOP ONLY - hover effects
       card.addEventListener('mouseenter', () => {
         gsap.to(card, {
           scale: 1.05,
@@ -318,90 +320,74 @@ function addJerseyCardHoverEffect() {
           boxShadow: '0 16px 40px 0 rgba(2,62,138,0.25)'
         });
       });
-    } else {
-      // Fixed mobile touch effects
-      card.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-
-        gsap.to(card, {
-          scale: 1.02,
-          duration: 0.2,
-          ease: 'power2.out'
-        });
-      }, { passive: false });
-
-      card.addEventListener('touchend', (e) => {
-        e.preventDefault();
-
-        gsap.to(card, {
-          scale: 1,
-          duration: 0.2,
-          ease: 'power2.out'
-        });
-      }, { passive: false });
-
-      card.addEventListener('touchcancel', (e) => {
-        gsap.to(card, {
-          scale: 1,
-          duration: 0.2,
-          ease: 'power2.out'
-        });
-      });
     }
+    // MOBILE: NO INTERACTION AT ALL - just display images
   });
 }
 
-function addJerseyCardTouchEffectAlternative() {
+function forceImagesVisible() {
   const jerseyCards = document.querySelectorAll('.jersey-card');
-  if (!jerseyCards.length) return;
+  const jerseyImages = document.querySelectorAll('.jersey-card img, .jersey-image-wrapper img');
+  const imageWrappers = document.querySelectorAll('.jersey-image-wrapper');
 
-  const hasHover = window.matchMedia('(hover: hover)').matches;
-
+  // Force all jersey elements to be visible
   jerseyCards.forEach(card => {
-    if (hasHover) {
-      // Desktop hover effects (same as before)
-      card.addEventListener('mouseenter', () => {
-        gsap.to(card, {
-          scale: 1.05,
-          duration: 0.3,
-          ease: 'power2.out',
-          zIndex: 10,
-          boxShadow: '0 20px 60px 0 rgba(2,62,138,0.25), 0 8px 20px rgba(0,0,0,0.18)'
-        });
-      });
+    card.style.display = 'block';
+    card.style.opacity = '1';
+    card.style.visibility = 'visible';
+    card.style.pointerEvents = 'auto';
+    card.style.transform = 'none';
+    card.style.position = 'relative';
+  });
 
-      card.addEventListener('mouseleave', () => {
-        gsap.to(card, {
-          scale: 1,
-          duration: 0.3,
-          ease: 'power2.out',
-          zIndex: 2,
-          boxShadow: '0 16px 40px 0 rgba(2,62,138,0.25)'
-        });
-      });
-    } else {
-      // Mobile: Use click/tap instead of touch events
-      card.addEventListener('click', (e) => {
-        // Quick scale animation on tap
-        gsap.to(card, {
-          scale: 1.02,
-          duration: 0.1,
-          ease: 'power2.out',
-          yoyo: true,
-          repeat: 1
-        });
-      });
-    }
+  jerseyImages.forEach(img => {
+    img.style.display = 'block';
+    img.style.opacity = '1';
+    img.style.visibility = 'visible';
+    img.style.pointerEvents = 'none'; // Prevent image drag
+    img.style.webkitUserSelect = 'none';
+    img.style.userSelect = 'none';
+    img.style.webkitTouchCallout = 'none';
+    img.style.webkitUserDrag = 'none';
+    img.style.position = 'relative';
+    img.style.zIndex = '1';
+  });
+
+  imageWrappers.forEach(wrapper => {
+    wrapper.style.display = 'block';
+    wrapper.style.opacity = '1';
+    wrapper.style.visibility = 'visible';
+    wrapper.style.position = 'relative';
   });
 }
 
-// Enhanced DOMContentLoaded with image loading check
+function disableAllTouchEvents() {
+  const jerseyCards = document.querySelectorAll('.jersey-card');
+
+  jerseyCards.forEach(card => {
+    // Remove all possible touch event listeners
+    card.removeEventListener('touchstart', () => { });
+    card.removeEventListener('touchend', () => { });
+    card.removeEventListener('touchmove', () => { });
+    card.removeEventListener('touchcancel', () => { });
+
+    // Disable touch events with CSS
+    card.style.touchAction = 'none';
+    card.style.webkitTapHighlightColor = 'transparent';
+    card.style.webkitTouchCallout = 'none';
+    card.style.webkitUserSelect = 'none';
+    card.style.userSelect = 'none';
+  });
+}
+
+// Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM loaded, initializing jersey animations...');
+
   // Check if all required elements exist
   const requiredElements = [
     '.jersey-section',
-    '.jersey-card',
-    '.jersey-image-wrapper'
+    '.jersey-card'
   ];
 
   const allElementsExist = requiredElements.every(selector =>
@@ -413,57 +399,103 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Ensure images are loaded before initializing animations
+  // FORCE IMAGES TO BE VISIBLE IMMEDIATELY
+  forceImagesVisible();
+
+  // DISABLE ALL TOUCH EVENTS
+  disableAllTouchEvents();
+
+  // Wait for images to load
   const images = document.querySelectorAll('.jersey-card img');
   let loadedImages = 0;
 
-  function initializeAnimations() {
+  function initAnimations() {
+    console.log('Initializing animations...');
+
+    // Force images visible again
+    forceImagesVisible();
+
+    // Initialize animations
     animateJerseyShine();
     animateJerseyScrollIn();
+    addJerseyCardHoverEffect();
 
-    // Use the alternative touch handler for better mobile experience
-    addJerseyCardTouchEffectAlternative();
+    console.log('Jersey animations initialized');
   }
 
   if (images.length === 0) {
-    // No images to wait for
-    initializeAnimations();
+    console.log('No images found, initializing without waiting');
+    initAnimations();
   } else {
-    // Wait for images to load
-    images.forEach(img => {
-      if (img.complete) {
-        loadedImages++;
-        if (loadedImages === images.length) {
-          initializeAnimations();
-        }
-      } else {
-        img.addEventListener('load', () => {
-          loadedImages++;
-          if (loadedImages === images.length) {
-            initializeAnimations();
-          }
-        });
+    console.log(`Found ${images.length} images, waiting for load...`);
 
-        img.addEventListener('error', () => {
-          console.warn('Image failed to load:', img.src);
-          loadedImages++;
-          if (loadedImages === images.length) {
-            initializeAnimations();
-          }
-        });
+images.forEach((img, index) => {
+  if (img.complete && img.naturalWidth > 0) {
+    console.log(`Image ${index} already loaded`);
+    loadedImages++;
+    if (loadedImages === images.length) {
+      initAnimations();
+    }
+  } else {
+    img.onload = () => {
+      console.log(`Image ${index} loaded`);
+      loadedImages++;
+      if (loadedImages === images.length) {
+        initAnimations();
       }
-    });
+    };
+
+    img.onerror = () => {
+      console.warn(`Image ${index} failed to load:`, img.src);
+      loadedImages++;
+      if (loadedImages === images.length) {
+        initAnimations();
+      }
+    };
   }
+});
 
-  // Handle orientation change on mobile
-  window.addEventListener('orientationchange', () => {
-    setTimeout(() => {
-      // Refresh ScrollTrigger after orientation change
-      if (typeof ScrollTrigger !== 'undefined') {
-        ScrollTrigger.refresh();
-      }
-    }, 100);
-  });
+// Fallback timeout
+setTimeout(() => {
+  if (loadedImages < images.length) {
+    console.log('Timeout reached, initializing anyway');
+    initAnimations();
+  }
+}, 2000);
+  }
+});
+
+// Additional safety nets
+window.addEventListener('load', () => {
+  console.log('Window loaded, forcing images visible again');
+  forceImagesVisible();
+  disableAllTouchEvents();
+});
+
+// Handle orientation changes
+window.addEventListener('orientationchange', () => {
+  setTimeout(() => {
+    console.log('Orientation changed, forcing images visible');
+    forceImagesVisible();
+    disableAllTouchEvents();
+
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
+  }, 300);
+});
+
+// Handle resize
+window.addEventListener('resize', () => {
+  clearTimeout(window.resizeTimeout);
+  window.resizeTimeout = setTimeout(() => {
+    forceImagesVisible();
+    disableAllTouchEvents();
+
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
+  }, 250);
 });
 
 
