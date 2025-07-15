@@ -1,3 +1,8 @@
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && typeof MotionPathPlugin !== 'undefined' && typeof ScrollToPlugin !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, ScrollToPlugin);
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const loadingScreen = document.getElementById('loadingScreen');
 
