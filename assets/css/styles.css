@@ -1930,7 +1930,8 @@ body.loaded>*:not(.loading-screen) {
   .f,
   .g,
   .x,
-  .jersyies{
+ .jersyies,
+ .featured-video-section {
     background: none;
   }
   .setA,
