@@ -1929,9 +1929,7 @@ body.loaded>*:not(.loading-screen) {
   .e,
   .f,
   .g,
-  .x,
- .jersyies,
- .featured-video-section {
+  .x {
     background: none;
   }
   .setA,
@@ -2235,6 +2233,7 @@ body.loaded>*:not(.loading-screen) {
 @media screen and (max-width: 768px) {
   .jersyies {
     padding: 30px 10px;
+    background: none;
   }
 
   .imageholder {
@@ -3647,6 +3646,7 @@ body.loaded>*:not(.loading-screen) {
     min-height: 320px;
     height: auto;
     padding-bottom: 20px;
+    background: none;
   }
 
   .featured-video-section h2 {
