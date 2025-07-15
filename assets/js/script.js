@@ -229,7 +229,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
 function animateJerseyShine() {
   const shineElements = document.querySelectorAll('.jersey-shine .shine-overlay');
   if (!shineElements.length) {
@@ -361,24 +360,7 @@ function forceImagesVisible() {
   });
 }
 
-function disableAllTouchEvents() {
-  const jerseyCards = document.querySelectorAll('.jersey-card');
 
-  jerseyCards.forEach(card => {
-    // Remove all possible touch event listeners
-    card.removeEventListener('touchstart', () => { });
-    card.removeEventListener('touchend', () => { });
-    card.removeEventListener('touchmove', () => { });
-    card.removeEventListener('touchcancel', () => { });
-
-    // Disable touch events with CSS
-    card.style.touchAction = 'none';
-    card.style.webkitTapHighlightColor = 'transparent';
-    card.style.webkitTouchCallout = 'none';
-    card.style.webkitUserSelect = 'none';
-    card.style.userSelect = 'none';
-  });
-}
 
 // Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
@@ -403,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
   forceImagesVisible();
 
   // DISABLE ALL TOUCH EVENTS
-  disableAllTouchEvents();
+  // disableAllTouchEvents(); // This line is commented out as per the edit hint
 
   // Wait for images to load
   const images = document.querySelectorAll('.jersey-card img');
@@ -469,7 +451,7 @@ setTimeout(() => {
 window.addEventListener('load', () => {
   console.log('Window loaded, forcing images visible again');
   forceImagesVisible();
-  disableAllTouchEvents();
+  // disableAllTouchEvents(); // This line is commented out as per the edit hint
 });
 
 // Handle orientation changes
@@ -477,7 +459,7 @@ window.addEventListener('orientationchange', () => {
   setTimeout(() => {
     console.log('Orientation changed, forcing images visible');
     forceImagesVisible();
-    disableAllTouchEvents();
+    // disableAllTouchEvents(); // This line is commented out as per the edit hint
 
     if (typeof ScrollTrigger !== 'undefined') {
       ScrollTrigger.refresh();
@@ -490,13 +472,14 @@ window.addEventListener('resize', () => {
   clearTimeout(window.resizeTimeout);
   window.resizeTimeout = setTimeout(() => {
     forceImagesVisible();
-    disableAllTouchEvents();
+    // disableAllTouchEvents(); // This line is commented out as per the edit hint
 
     if (typeof ScrollTrigger !== 'undefined') {
       ScrollTrigger.refresh();
     }
   }, 250);
 });
+
 
 
 

@@ -3218,15 +3218,11 @@ body.loaded>*:not(.loading-screen) {
   transform: translateX(-120%) skewX(-20deg);
 }
 
-.jersey-card {
-  touch-action: manipulation;
-}
 
-.jersey-card img {
-  pointer-events: none;
-  user-select: none;
-}
 
+
+
+/* CRITICAL: Mobile Jersey Image Fix */
 .jersey-card {
   display: block !important;
   opacity: 1 !important;
@@ -3238,13 +3234,6 @@ body.loaded>*:not(.loading-screen) {
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
-  pointer-events: none !important;
-  -webkit-user-select: none !important;
-  user-select: none !important;
-  -webkit-touch-callout: none !important;
-  -webkit-user-drag: none !important;
-  position: relative !important;
-  z-index: 1 !important;
 }
 
 .jersey-image-wrapper {
@@ -3257,16 +3246,9 @@ body.loaded>*:not(.loading-screen) {
 /* Mobile specific overrides */
 @media (max-width: 768px) {
   .jersey-card {
-    touch-action: none !important;
     -webkit-tap-highlight-color: transparent !important;
-    -webkit-touch-callout: none !important;
-    -webkit-user-select: none !important;
-    user-select: none !important;
   }
 
-  .jersey-card * {
-    pointer-events: none !important;
-  }
 
   .jersey-card img {
     display: block !important;
@@ -3288,7 +3270,6 @@ body.loaded>*:not(.loading-screen) {
   left: 0;
   right: 0;
   bottom: 0;
-  pointer-events: none;
   z-index: 2;
   background: linear-gradient(120deg, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.55) 35%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.55) 65%, rgba(255, 255, 255, 0.0) 100%);
   width: 120%;
@@ -3438,6 +3419,7 @@ body.loaded>*:not(.loading-screen) {
     height: 220px;
   }
 }
+
 
 .featured-video-section {
   text-align: center;
