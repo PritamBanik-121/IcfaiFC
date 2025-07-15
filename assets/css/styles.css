@@ -3218,6 +3218,15 @@ body.loaded>*:not(.loading-screen) {
   transform: translateX(-120%) skewX(-20deg);
 }
 
+.jersey-card {
+  touch-action: manipulation;
+}
+
+.jersey-card img {
+  pointer-events: none;
+  user-select: none;
+}
+
 /* Base styles for jersey shine effect  */
 .jersey-shine {
   position: relative;

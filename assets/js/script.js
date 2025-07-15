@@ -230,6 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// REPLACE YOUR EXISTING JERSEY FUNCTIONS WITH THIS CODE
 
 function animateJerseyShine() {
   const shineElements = document.querySelectorAll('.jersey-shine .shine-overlay');
@@ -292,7 +293,7 @@ function addJerseyCardHoverEffect() {
   const jerseyCards = document.querySelectorAll('.jersey-card');
   if (!jerseyCards.length) return;
 
-  // supports hover (not touch-only)
+  // Check if device supports hover (not touch-only)
   const hasHover = window.matchMedia('(hover: hover)').matches;
 
   jerseyCards.forEach(card => {
@@ -318,16 +319,28 @@ function addJerseyCardHoverEffect() {
         });
       });
     } else {
-      // Mobile touch effects
-      card.addEventListener('touchstart', () => {
+      // Fixed mobile touch effects
+      card.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+
         gsap.to(card, {
           scale: 1.02,
           duration: 0.2,
           ease: 'power2.out'
         });
-      });
+      }, { passive: false });
 
-      card.addEventListener('touchend', () => {
+      card.addEventListener('touchend', (e) => {
+        e.preventDefault();
+
+        gsap.to(card, {
+          scale: 1,
+          duration: 0.2,
+          ease: 'power2.out'
+        });
+      }, { passive: false });
+
+      card.addEventListener('touchcancel', (e) => {
         gsap.to(card, {
           scale: 1,
           duration: 0.2,
@@ -338,7 +351,51 @@ function addJerseyCardHoverEffect() {
   });
 }
 
-//  DOMContentLoaded EVENT WITH THIS
+function addJerseyCardTouchEffectAlternative() {
+  const jerseyCards = document.querySelectorAll('.jersey-card');
+  if (!jerseyCards.length) return;
+
+  const hasHover = window.matchMedia('(hover: hover)').matches;
+
+  jerseyCards.forEach(card => {
+    if (hasHover) {
+      // Desktop hover effects (same as before)
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+          scale: 1.05,
+          duration: 0.3,
+          ease: 'power2.out',
+          zIndex: 10,
+          boxShadow: '0 20px 60px 0 rgba(2,62,138,0.25), 0 8px 20px rgba(0,0,0,0.18)'
+        });
+      });
+
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          scale: 1,
+          duration: 0.3,
+          ease: 'power2.out',
+          zIndex: 2,
+          boxShadow: '0 16px 40px 0 rgba(2,62,138,0.25)'
+        });
+      });
+    } else {
+      // Mobile: Use click/tap instead of touch events
+      card.addEventListener('click', (e) => {
+        // Quick scale animation on tap
+        gsap.to(card, {
+          scale: 1.02,
+          duration: 0.1,
+          ease: 'power2.out',
+          yoyo: true,
+          repeat: 1
+        });
+      });
+    }
+  });
+}
+
+// Enhanced DOMContentLoaded with image loading check
 document.addEventListener('DOMContentLoaded', () => {
   // Check if all required elements exist
   const requiredElements = [
@@ -356,10 +413,47 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Initialize animations
-  animateJerseyShine();
-  animateJerseyScrollIn();
-  addJerseyCardHoverEffect();
+  // Ensure images are loaded before initializing animations
+  const images = document.querySelectorAll('.jersey-card img');
+  let loadedImages = 0;
+
+  function initializeAnimations() {
+    animateJerseyShine();
+    animateJerseyScrollIn();
+
+    // Use the alternative touch handler for better mobile experience
+    addJerseyCardTouchEffectAlternative();
+  }
+
+  if (images.length === 0) {
+    // No images to wait for
+    initializeAnimations();
+  } else {
+    // Wait for images to load
+    images.forEach(img => {
+      if (img.complete) {
+        loadedImages++;
+        if (loadedImages === images.length) {
+          initializeAnimations();
+        }
+      } else {
+        img.addEventListener('load', () => {
+          loadedImages++;
+          if (loadedImages === images.length) {
+            initializeAnimations();
+          }
+        });
+
+        img.addEventListener('error', () => {
+          console.warn('Image failed to load:', img.src);
+          loadedImages++;
+          if (loadedImages === images.length) {
+            initializeAnimations();
+          }
+        });
+      }
+    });
+  }
 
   // Handle orientation change on mobile
   window.addEventListener('orientationchange', () => {
@@ -371,6 +465,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
   });
 });
+
+
 
 // --- VIDEO CAROUSEL FIXED CODE ---
 document.addEventListener('DOMContentLoaded', function () {
