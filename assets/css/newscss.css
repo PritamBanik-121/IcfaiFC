@@ -295,8 +295,8 @@ a:hover .box {
   font-weight: 600;
 }
 
-.links a:hover {
-  color: #e93515;
+.nav .links a:hover {
+  color: #f3f900;
   text-decoration: underline;
 }
 
