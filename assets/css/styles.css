@@ -1922,7 +1922,17 @@ body.loaded>*:not(.loading-screen) {
   .achievment {
     height: 100%;
   }
-
+  .a,
+  .b,
+  .c,
+  .d,
+  .e,
+  .f,
+  .g,
+  .x,
+  .jersyies{
+    background: none;
+  }
   .setA,
   .setC,
   .setE,
