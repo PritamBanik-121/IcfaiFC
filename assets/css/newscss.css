@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 *{
   margin: 0;
@@ -9,7 +10,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway',sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   height: 100%;
   width: 100%;
 }
@@ -21,7 +22,7 @@ body {
   background: #C9D6FF;
   background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
   background: linear-gradient(to right, #E2E2E2, #C9D6FF);
-  font-family: "Raleway",sans-serif;
+  font-family: 'Asta Sans', sans-serif;
 }
 
 .heading {
@@ -152,7 +153,7 @@ a:hover .box {
 }
 
 .navbar a {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   font-weight: 600;
 }
 
@@ -174,7 +175,7 @@ a:hover .box {
 }
 
 .nav-links li a {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   font-weight: 600;
   color: #000;
   text-decoration: none;
@@ -298,7 +299,7 @@ a:hover .box {
 .links a {
   text-decoration: none;
   color: #ffffff;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
 }

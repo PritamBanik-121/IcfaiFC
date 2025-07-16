@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 * {
   margin: 0;
   padding: 0;
+  
 }
-
+        
 html,
 body {
   height: 100%;
   width: 100%;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
 
 }
 
@@ -174,7 +177,7 @@ body {
 }
 
 .navbar a {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   font-weight: 600;
 }
 
@@ -196,7 +199,7 @@ body {
 }
 
 .nav-links li a {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   font-weight: 600;
   color: #000;
   text-decoration: none;
@@ -320,7 +323,7 @@ body {
 .links a {
   text-decoration: none;
   color: #ffffff;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -372,7 +375,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Raleway",sans-serif;
+  font-family: 'Asta Sans', sans-serif;
 }
 
 .footer-container {
