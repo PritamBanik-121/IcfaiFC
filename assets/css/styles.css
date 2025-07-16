@@ -2120,19 +2120,19 @@ body.loaded>*:not(.loading-screen) {
   .textContentF .text,
   .textContentG .text {
     font-size: 14px !important;
-    text-align: center;
+    text-align: justify;
   }
 
   .textkontent .text {
     font-size: 14px !important;
-    text-align: left;
+    text-align: justify;
     line-height: 1.8;
 
   }
 
   .textContentC .text {
     font-size: 14px !important;
-    text-align: left;
+    text-align: justify;
     line-height: 1.8;
   }
 
