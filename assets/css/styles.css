@@ -371,7 +371,7 @@ body.loaded>*:not(.loading-screen) {
 
 .hero {
   height: 78vh;
-  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../images/hero.webp');
+  background: linear-gradient(135deg, rgba(5, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../images/hero_banner_new.webp');
   display: flex;
   align-items: center;
   justify-content: center;
