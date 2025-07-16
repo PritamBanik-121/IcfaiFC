@@ -820,7 +820,14 @@ display: grid;
   margin-top: 10px;
   width: 100%;
 }
-
+.footer-bottom a{
+  color: White;
+  font-family: "Oswald",sans-serif;
+  font-weight: 400;
+}
+.footer-bottom a:hover{
+  color: #a5a5a5;
+}
 
 @media screen and (min-width: 769px) and (max-width: 940px) {
   .footer-container {

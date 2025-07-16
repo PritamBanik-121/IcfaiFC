@@ -2589,6 +2589,14 @@ body.loaded>*:not(.loading-screen) {
   width: 100%;
   padding-right: 20%;
 }
+.footer-bottom a{
+  color: White;
+  font-family: "Oswald",sans-serif;
+  font-weight: 400;
+}
+.footer-bottom a:hover{
+  color: #a5a5a5;
+}
 
 
 @media screen and (width > 930) {
