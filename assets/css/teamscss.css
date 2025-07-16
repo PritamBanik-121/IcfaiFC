@@ -1,0 +1,221 @@
+:root {
+    --primary: #6e48aa;
+    --secondary: #9d50bb;
+    --accent: #4776E6;
+    --dark: #1a1a2e;
+    --light: #f8f9fa;
+    --neon: #00f2fe;
+    --neon-alt: #4facfe;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    margin: 0;
+    padding: 0;
+    color: var(--light);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, var(--neon), var(--neon-alt));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -10px;
+    left: 0;
+    background: linear-gradient(90deg, var(--neon), var(--neon-alt));
+    border-radius: 3px;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.member {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.member::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--neon), var(--neon-alt));
+    z-index: -1;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 242, 254, 0.2);
+}
+
+.member:hover::before {
+    opacity: 0.5;
+}
+
+.image-holder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 25px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 3px solid rgba(74, 144, 226, 0.5);
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.member:hover .image-holder {
+    border-color: var(--neon);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.5);
+    transform: scale(1.05);
+}
+
+.image-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-info {
+    flex-grow: 1;
+}
+
+.member-name {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: 600;
+}
+
+.member-role {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(45deg, var(--accent), var(--secondary));
+    color: white;
+    padding: 8px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(71, 118, 230, 0.3);
+}
+
+.linkedin-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(71, 118, 230, 0.4);
+    background: linear-gradient(45deg, var(--secondary), var(--accent));
+}
+
+.linkedin-icon {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.tech-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+    background: 
+        radial-gradient(circle at 20% 30%, var(--neon), transparent 30%),
+        radial-gradient(circle at 80% 70%, var(--neon-alt), transparent 30%);
+}
+
+.grid-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .team-members {
+        grid-template-columns: 1fr;
+    }
+    
+    .member {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .image-holder {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.member:nth-child(odd) {
+    animation: float 6s ease-in-out infinite;
+}
+
+.member:nth-child(even) {
+    animation: float 6s ease-in-out infinite 1s;
+}
