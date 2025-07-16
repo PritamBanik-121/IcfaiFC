@@ -2746,7 +2746,7 @@ body.loaded>*:not(.loading-screen) {
   text-align: center;
   margin-top: 15px;
   position: relative;
-  z-index: 20;
+  z-index: 2;
   padding: 10px 0;
 }
 
