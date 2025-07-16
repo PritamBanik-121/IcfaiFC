@@ -2882,7 +2882,7 @@ body.loaded>*:not(.loading-screen) {
   }
 
   .squad-section h2 {
-    font-size: 40px;
+    font-size: 28px;
     letter-spacing: 0px;
     margin-bottom: 10px;
   }
@@ -3417,7 +3417,7 @@ letter-spacing: 2px;
   }
 
   .jersey-title {
-    font-size: 40px;
+    font-size: 35px;
     letter-spacing: 0px;
     margin-bottom: 8px;
   }
