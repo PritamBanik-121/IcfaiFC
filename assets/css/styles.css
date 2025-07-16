@@ -1585,7 +1585,7 @@ body.loaded>*:not(.loading-screen) {
 
 .textContentD .text {
   text-align: justify;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.6;
   color: #333;
 }
@@ -1763,7 +1763,7 @@ body.loaded>*:not(.loading-screen) {
 
 .textContentF .text {
   text-align: justify;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   color: #1b1a1a;
   width: 600px;
