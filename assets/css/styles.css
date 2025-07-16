@@ -1342,11 +1342,18 @@ body.loaded>*:not(.loading-screen) {
 
 .achievment-heading h2 {
   text-align: center;
-  font-size: 42px;
+  font-size: 55px;
+  letter-spacing: 2px;
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
 }
 
+@media screen and (max-width:768px) {
+  .achievment-heading h2 {
+    font-size: 40px;
+    letter-spacing: 0px;
+  }
+}
 
 .quote-icon-left {
   position: absolute;
@@ -2781,10 +2788,12 @@ body.loaded>*:not(.loading-screen) {
 
 .squad-section h2 {
   font-family: 'Oswald', sans-serif;
-  font-size: 43px;
+  font-size: 55px;
+  letter-spacing: 2px;
   font-weight: 900;
   margin-bottom: 50px;
 }
+
 
 .carousel {
   display: flex;
@@ -2873,7 +2882,8 @@ body.loaded>*:not(.loading-screen) {
   }
 
   .squad-section h2 {
-    font-size: 24px;
+    font-size: 40px;
+    letter-spacing: 0px;
     margin-bottom: 10px;
   }
 }
@@ -3242,7 +3252,8 @@ body.loaded>*:not(.loading-screen) {
 .jersey-title {
   font-family: 'Oswald', sans-serif;
   color: #143b6d;
-  font-size: 2.8rem;
+font-size: 55px;
+letter-spacing: 2px;
   font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 10px;
@@ -3406,8 +3417,8 @@ body.loaded>*:not(.loading-screen) {
   }
 
   .jersey-title {
-    font-size: 2rem;
-    letter-spacing: 1px;
+    font-size: 40px;
+    letter-spacing: 0px;
     margin-bottom: 8px;
   }
 
@@ -3471,7 +3482,6 @@ body.loaded>*:not(.loading-screen) {
   }
 
   .jersey-title {
-    font-size: 1.6rem;
     letter-spacing: 0.5px;
   }
 
@@ -3841,7 +3851,6 @@ body.loaded>*:not(.loading-screen) {
   }
 
   .jersey-title {
-    font-size: 1.5rem !important;
     margin-bottom: 8px !important;
   }
 
