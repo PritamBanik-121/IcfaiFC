@@ -495,23 +495,6 @@ body.loaded>*:not(.loading-screen) {
   font-size: 1rem;
 }
 
-.btn {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-}
-
-.btn-primary {
-  background: #dc2626;
-  color: white;
-}
 
 .btn-primary:hover {
   background: #b91c1c;
@@ -4024,4 +4007,28 @@ letter-spacing: 2px;
     height: auto;
     margin-bottom: 20px;
   }
+}
+
+
+
+.hero-buttons a {
+  text-decoration: none;
+  font-family: "Asta Sans";
+  color: white;
+  background: red;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.hero-buttons a:hover{
+background: #b91c1c;
+  transform: scale(1.05);
 }

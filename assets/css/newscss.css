@@ -96,6 +96,7 @@ a .box {
   align-items: center;
   opacity: 0;
   background-color: #000000da;
+  cursor: pointer;
 }
 
 a h4 {
