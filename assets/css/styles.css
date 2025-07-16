@@ -648,6 +648,9 @@ body.loaded>*:not(.loading-screen) {
   .news-card img {
     height: 200px;
   }
+  .news-content h3{
+    font-size: 1rem;
+  }
 }
 
 
