@@ -2117,12 +2117,15 @@ body.loaded>*:not(.loading-screen) {
   .textContentX .text,
   .textContentD .text,
   .textContentE .text,
-  .textContentF .text,
-  .textContentG .text {
+  .textContentF .text
+   {
     font-size: 14px !important;
     text-align: justify;
   }
-
+.textContentG .text{
+  font-size: 14px !important;
+    text-align: center;
+}
   .textkontent .text {
     font-size: 14px !important;
     text-align: justify;
