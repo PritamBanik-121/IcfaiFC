@@ -896,7 +896,7 @@ body.loaded>*:not(.loading-screen) {
   left: 50%;
   top: 0;
   transform: translate(-50%, -20%);
-  z-index: 2;
+  z-index: 200;
   background: transparent;
   padding: 0;
   display: flex;
