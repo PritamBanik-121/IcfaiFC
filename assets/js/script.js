@@ -682,3 +682,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startAutoplay();
   }
 });
+
+function goToNews(id) {
+  window.location.href = `newsdetails.html?id=${id}`;
+}

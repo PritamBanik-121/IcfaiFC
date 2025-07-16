@@ -48,20 +48,23 @@
       </ul>
     </div>
   </div>
-  <main class="container">
+ <main class="container">
     <h1>Detailed News</h1>
-
     <div class="sub-container">
-    <div class="image-container">
-      <img src="./assets/images/image1.webp" alt="">
-    </div>
-    <div class="text-content">
-      <h3>News Heading</h3>
-      <p>News details Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum deserunt tempore qui maxime, velit omnis quos excepturi eaque reprehenderit necessitatibus. Asperiores totam consectetur sunt eius, reiciendis esse debitis laboriosam tempora minima unde repellat? Aspernatur ea voluptates, mollitia quasi aut recusandae possimus labore animi, sapiente ratione minima cupiditate rerum sit quibusdam quam veniam autem voluptas facilis dignissimos laborum, quas ipsum unde! Veritatis minus quibusdam natus quia illum fugiat nisi nulla voluptatum inventore eum. Sint nesciunt nulla voluptatem ipsum illum nobis ipsam atque porro impedit, repudiandae deserunt neque voluptatum sed ad ab tenetur nisi hic recusandae dolorum. Praesentium quisquam culpa provident harum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, sint? hasf tates, mollitia quasi aut recusandae possimus labore animi, sapiente ratione minima cupiditate rerum sit quibusdam quam veniam autem voluptas facilis dignissimos lab lorem500 </p>
-      <h5> <span>Author</span> : Bapan Debnath </h5>
-    </div>
+      <div class="image-container">
+        <img id="newsImage" src="" alt="News Image" />
+      </div>
+      <div class="text-content">
+        <h3 id="newsHeading"></h3>
+        <p id="newsScore"></p> 
+        <p id="newsDate"></p> 
+        <p id="newsDetails"></p>
+        <h5><span id="authortitle">Author:</span> <span id="newsAuthor"></span></h5>
+      </div>
     </div>
   </main>
+
+
   <footer class="site-footer">
     <div class="footer-container">
 
@@ -128,7 +131,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
 
-    const observer = new IntersectionObserver((entries) => {
+      const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
@@ -171,4 +174,29 @@
         navLinks.classList.remove('show');
       }
     });
+
+
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id")); // example: id=0, id=1, etc.
+
+    fetch('./assets/js/news.json')
+      .then(response => response.json())
+      .then(data => {
+        const newsItem = data.news[id]; // Index-based lookup
+
+        if (newsItem) {
+          document.getElementById("newsImage").src = newsItem.image_url;
+          document.getElementById("newsHeading").textContent = newsItem.team;
+          document.getElementById("newsScore").textContent = "Score: " + newsItem.score; // Add this
+          document.getElementById("newsDate").textContent = "Date: " + newsItem.date; // Add this
+          document.getElementById("newsDetails").textContent = newsItem.news;
+          document.getElementById("newsAuthor").textContent = newsItem.author;
+        } else {
+          document.querySelector(".text-content").innerHTML = "<p>News not found.</p>";
+        }
+      })
+      .catch(error => {
+        console.error("Failed to load JSON:", error);
+        document.querySelector(".text-content").innerHTML = "<p>Error loading news.</p>";
+      });
   </script>

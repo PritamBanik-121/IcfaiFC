@@ -1,0 +1,77 @@
+{
+    "news": [
+        {
+            "image_url": "./assets/images/newsimage4.webp",
+            "team": "ICFAI FC  vs VIVEKANANDA CLUB ",
+            "score": "0-1",
+            "news": "ICFAI FC lose the match  against VIVEKANANDA CLUB with 0-1",
+            "date": "MAY 28 , 2025",
+            "author": "Admin"
+        },
+        {
+            "image_url": "./assets/images/newsimage2.webp",
+            "team": "ICFAI FC vs YOUTH CLUB",
+            "score": "2-0",
+            "news": "ICFAI FC defeats YOUTH CLUB with a commanding  2-0 win.One step closer to the final",
+            "date": "May 25, 2025",
+            "author": "ICFAI University Tripura"
+        },
+        {
+            "image_url": "./assets/images/newsimage3.webp",
+            "team": "ICFAI FC vs UBST",
+            "score": "3-1",
+            "news": "ICFAI FC storms ahead with a solid 3-1 win against UBST",
+            "date": "May 22, 2025",
+            "author": "ICFAI University Tripura"
+        },
+        {
+            "image_url": "./assets/images/newsimage1.webp",
+            "team": "ICFAI FC VS SWAMI VIVEKANANDA CLUB",
+            "score": "1-1",
+            "news": "Tournament - C Division League Men Football Tournament 2024. A hard-fought match for ICFAI FC ends in a 1-1 draw against Swami Vivekananda Club in the TFA C Division.",
+            "date": "July 11, 2024",
+            "author": "Bapan Debnath"
+        },
+        {
+            "image_url": "./assets/images/newsimage5.webp",
+            "team": "ICFAI FC VS Amra Kajana",
+            "score": " 15-0",
+            "news": "ICFAI FC delivers a stunning 15-0 victory against Amra Kajana in the TFA C Division. Incredible performance by our goal scorers: Sachlang Jamatia with a hat-trick (3 goals) Raju Tripura with 1 goal Sachlang Debbarma with 1 goal Khakchang Jamatia with 5 goals Khatendra Reang with 2 goals Leo Marak with 1 goalRakesh Jamatia with 1 goal Rohit Jamatia with 1 goal. Proud of everyone’s effort and teamwork.",
+            "date": "July 04, 2024",
+            "author": "ICFAI University Tripura"
+        },
+        {
+            "image_url": "./assets/images/newsimage6.webp",
+            "team": " ICFAI FC VS UKCC",
+            "score": "5-0",
+            "news": "ICFAI FC continues to shine with a fantastic 5-0 win against UKCC in the TFA C Division. Animesh Debbarma with 2 goals Gobinda Purna amatia with 1 goal Rakesh Jamatia with 1 goal Rohit Jamatia with 1 goal",
+            "date": "July 01, 2024",
+            "author": "ICFAI University Tripura"
+        },
+        {
+            "image_url": "./assets/images/newsimage7.webp",
+            "team": " ICFAI FC VS Kadamtala Yuba Sangha",
+            "score": "5-0",
+            "news": "ICFAI FC strikes again with a spectacular 5-0 win against Kadamtala Yuba Sangha in the TFA C Division. Animesh Debbarma with an incredible hat-trick (3 goals) Kiman Bai Jamatia with 1 goal Rakesh Jamatia with 1 goal",
+            "date": "June 27, 2024",
+            "author": "ICFAI University Tripura"
+        },
+        {
+            "image_url": "./assets/images/newsimage9.webp",
+            "team": " ICFAI FC VS SABUJ SANGA",
+            "score": "8-0",
+            "news": " An extraordinary match for ICFAI FC in the TFA C Division! ICFAI FC triumphed over SABUJ SANGHA with a phenomenal 8-0 win, Animesh Debbarma with an amazing hat-trick (3 goals), Sachlang Jamatia with 2 ,goals Rakesh Jamatia with 1 goal, Khakchang Jamatia with 1 goal, Bilash Debbarma with 1 goal",
+            "date": "June 22, 2024",
+            "author": "Bapan Debnath"
+        },
+        {
+            "image_url": "./assets/images/newsimage8.webp",
+            "team": "ICFAI FC VS Oriental Football Club (Bilonia)",
+            "score": "2-1",
+            "news": "ICFAI FC IUT participated for the 1st time ever in Tripura Football Association organise and All India Football Federation recognised as AIFF Affiliated Football Club; C - Division Club League Men Football Tournament 2023.1st Match (opening match) We ICFAI FC IUT Won By 2-1 against Oriental Football Club (Bilonia).",
+            "date": "November 29, 2023",
+            "author": "Bapan Debnath"
+        }
+        
+    ]
+}
