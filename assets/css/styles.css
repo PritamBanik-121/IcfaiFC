@@ -2727,6 +2727,7 @@ body.loaded>*:not(.loading-screen) {
   font-family: 'Oswald', sans-serif;
   font-size: 43px;
   font-weight: 900;
+  margin-bottom: 50px;
 }
 
 .carousel {
@@ -2812,6 +2813,7 @@ body.loaded>*:not(.loading-screen) {
   }
    .squad-section h2 {
     font-size: 24px;
+    margin-bottom: 10px;
   }
 }
 
