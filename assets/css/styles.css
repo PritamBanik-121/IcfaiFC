@@ -636,7 +636,30 @@ body.loaded>*:not(.loading-screen) {
   background-color: #001f4d;
 }
 
+
+
+.newsdirect{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.newsdirectbtn{
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Asta Sans",sans-serif;
+  color: #f3f3f3;
+  background: rgb(1, 72, 72);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
 @media (max-width: 768px) {
+ .newsdirectbtn{
+    font-size: 15px;
+  }
   .news{
     padding-top: 95px;
   }
