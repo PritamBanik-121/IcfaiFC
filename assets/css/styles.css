@@ -2318,7 +2318,7 @@ body.loaded>*:not(.loading-screen) {
 
 .sponsors-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   font-family: 'Oswald', sans-serif;
   color: #e3e3e3;
 }
@@ -4016,7 +4016,7 @@ letter-spacing: 2px;
   font-family: "Asta Sans";
   color: white;
   background: red;
-  padding: 12px 24px;
+  padding: 10px 22px;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
