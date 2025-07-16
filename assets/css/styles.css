@@ -284,9 +284,7 @@ body.loaded>*:not(.loading-screen) {
   }
 
 
-  .squad-section {
-    padding: 30px 5px;
-  }
+
 
   .news {
     padding: 30px 5px;
@@ -306,14 +304,6 @@ body.loaded>*:not(.loading-screen) {
   }
 
 
-
-  .achievement-wrapper {
-    padding: 0;
-  }
-
-  .achievment {
-    padding: 15px 0;
-  }
 
   body,
   html {
@@ -544,10 +534,12 @@ body.loaded>*:not(.loading-screen) {
   background-color: #444;
   color: #ffffff;
 }
+
 .news {
   padding: 100px 20px;
   background: #f5f6fa;
   font-family: "Oswald", sans-serif;
+  padding-top: 160px;
 }
 
 .news .news-container {
@@ -643,7 +635,11 @@ body.loaded>*:not(.loading-screen) {
 .read-more:hover {
   background-color: #001f4d;
 }
+
 @media (max-width: 768px) {
+  .news{
+    padding-top: 95px;
+  }
 
   .news-grid {
     grid-template-columns: 1fr;
@@ -660,9 +656,10 @@ body.loaded>*:not(.loading-screen) {
     height: 50px;
   }
 
-  .hero{
+  .hero {
     height: 60vh;
   }
+
   .hero h2 {
     font-size: 2rem;
   }
@@ -967,6 +964,7 @@ body.loaded>*:not(.loading-screen) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 160px;
 }
 
 .achievment {
@@ -1933,7 +1931,7 @@ body.loaded>*:not(.loading-screen) {
   .achievment {
     height: 100%;
   }
-  
+
   .b,
   .c,
   .d,
@@ -1943,6 +1941,7 @@ body.loaded>*:not(.loading-screen) {
   .x {
     background: none;
   }
+
   .setA,
   .setC,
   .setE,
@@ -2128,6 +2127,11 @@ body.loaded>*:not(.loading-screen) {
     width: 100px;
   }
 
+    .achievement-wrapper{
+    padding-top: 100px;
+  }
+
+
   .football-animate {
     display: none;
   }
@@ -2288,6 +2292,7 @@ body.loaded>*:not(.loading-screen) {
   background-position: left, right;
   background-repeat: no-repeat;
   background-size: contain;
+  padding-top: 160px;
 }
 
 .sponsors-section h2 {
@@ -2645,6 +2650,9 @@ body.loaded>*:not(.loading-screen) {
 
 @media (max-width: 480px) {
 
+  .sponsors-section{
+    margin-top: 85px;
+  }
   .sponsors-section,
   .instagram-section {
     height: auto;
@@ -2698,42 +2706,45 @@ body.loaded>*:not(.loading-screen) {
 
 /*squad grid krishnayan*/
 .squad-section {
-  text-align: center;           
-  color: #222;                   
-  text-transform: uppercase;     
-  letter-spacing: 2px;          
+  text-align: center;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   margin: 10px 10px;
-  padding: 30px;          
-  position: relative;            
+  padding: 30px;
+  position: relative;
+  padding-top: 160px;
 }
+
 .dots {
-    text-align: center;
-    margin-top: 15px;
-    position: relative;
-    z-index: 20;
-    padding: 10px 0;
+  text-align: center;
+  margin-top: 15px;
+  position: relative;
+  z-index: 20;
+  padding: 10px 0;
 }
 
 .dot {
-    height: 12px;
-    width: 12px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: relative;
-    z-index: 10;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 10;
 }
 
 .dot.active {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 .dot:hover {
-    background-color: #888;
+  background-color: #888;
 }
+
 .squad-section h2 {
   font-family: 'Oswald', sans-serif;
   font-size: 43px;
@@ -2767,13 +2778,17 @@ body.loaded>*:not(.loading-screen) {
 }
 
 .carousel-item img {
-  max-height: 100%; 
+  max-height: 100%;
   width: 100%;
   object-fit: contain;
   border-radius: 10px;
 }
 
 @media (max-width: 768px) {
+    .squad-section{
+    padding-top: 100px;
+  }
+
   .carousel-wrapper {
     height: 550px;
   }
@@ -2820,9 +2835,10 @@ body.loaded>*:not(.loading-screen) {
 
 
   .carousel-item img {
-    max-height: 500px; 
+    max-height: 500px;
   }
-   .squad-section h2 {
+
+  .squad-section h2 {
     font-size: 24px;
     margin-bottom: 10px;
   }
@@ -2885,6 +2901,8 @@ body.loaded>*:not(.loading-screen) {
   position: relative;
   overflow: hidden;
   margin-bottom: 40px;
+  padding-top: 180px;
+
 }
 
 .last-3-games-section::before {
