@@ -460,6 +460,7 @@ body.loaded>*:not(.loading-screen) {
   justify-content: center;
   margin-bottom: 2.5rem;
   flex-wrap: wrap;
+  text-decoration: none;
 }
 
 .hero-info {
@@ -632,6 +633,7 @@ body.loaded>*:not(.loading-screen) {
   font-weight: 500;
   font-size: 0.95rem;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .read-more:hover {
