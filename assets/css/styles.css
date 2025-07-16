@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
 
 
 * {
@@ -10,7 +13,7 @@
 
 html,
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   line-height: 1.6;
   color: #333;
   height: 100%;
@@ -334,7 +337,7 @@ body.loaded>*:not(.loading-screen) {
 }
 
 .navbar a {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   font-weight: 600;
 }
 
@@ -356,7 +359,7 @@ body.loaded>*:not(.loading-screen) {
 }
 
 .nav-links li a {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   font-weight: 600;
   color: #000;
   text-decoration: none;
@@ -437,7 +440,7 @@ body.loaded>*:not(.loading-screen) {
   font-size: 1.4rem;
   color: #e5e5e5;
   margin-bottom: 1rem;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   font-weight: 600;
 }
 
@@ -521,7 +524,7 @@ body.loaded>*:not(.loading-screen) {
   background-color: #0f0101;
   color: #ffffff;
   font-size: 18px;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   font-weight: 500;
   border-radius: 8px;
   transition: background-color 0.3s ease;
@@ -610,7 +613,7 @@ body.loaded>*:not(.loading-screen) {
   color: #444;
   line-height: 1.6;
   margin-bottom: 20px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
 }
 
 .readbtn {
@@ -871,7 +874,7 @@ body.loaded>*:not(.loading-screen) {
 .links a {
   text-decoration: none;
   color: #ffffff;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -1128,7 +1131,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderfade 2s ease-in-out alternate infinite;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   height: 100%;
 }
 
@@ -1275,7 +1278,7 @@ body.loaded>*:not(.loading-screen) {
 }
 
 #names {
-  font-family: "Raleway";
+  font-family: 'Asta Sans', sans-serif;
   font-size: 18px;
 }
 
@@ -1321,7 +1324,7 @@ body.loaded>*:not(.loading-screen) {
 }
 
 .text {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   padding: 20px;
   background-color: #e8f5e9;
   border-radius: 12px;
@@ -1432,7 +1435,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderfade 2s ease-in-out alternate infinite;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   width: 90%;
   height: 100%;
 }
@@ -1485,7 +1488,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderFade 2s ease-in-out alternate infinite;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
 }
 
 .bouncing-football {
@@ -1554,7 +1557,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderfade 2s ease-in-out alternate infinite;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   height: 100%;
 }
 
@@ -1593,7 +1596,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderFade 2s ease-in-out alternate infinite;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
 }
 
 .imageContent5 {
@@ -1640,7 +1643,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderfade 2s ease-in-out forwards;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   height: 100%;
   width: 50%;
 }
@@ -1682,7 +1685,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderfade 2s ease-in-out alternate infinite;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
 }
 
 .f {
@@ -1731,7 +1734,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderfade 2s ease-in-out alternate-reverse infinite;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   transform: rotate(-5deg);
   height: 100%;
 }
@@ -1772,7 +1775,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderFade 2s ease-in-out alternate infinite;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
 }
 
 .pin {
@@ -1825,7 +1828,7 @@ body.loaded>*:not(.loading-screen) {
   box-shadow: 0 8px 24px rgba(110, 240, 24, 0.4);
   position: relative;
   animation: borderfade 2s ease-in-out forwards;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   width: 50%;
   height: 100%;
 }
@@ -1864,7 +1867,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderFade1 2s ease-in-out alternate infinite;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
 }
 
 @keyframes borderFade1 {
@@ -1921,7 +1924,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderfade 2s ease-in-out forwards;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
   height: 100%;
 }
 
@@ -1954,7 +1957,7 @@ body.loaded>*:not(.loading-screen) {
   padding-left: 20px;
   position: relative;
   animation: borderFade 2s ease-in-out alternate infinite;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Asta Sans', sans-serif;
 }
 
 
