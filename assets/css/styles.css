@@ -838,7 +838,7 @@ body.loaded>*:not(.loading-screen) {
   background: #ededed;
   padding: 0;
   position: relative;
-  width: 100%;
+  width: 99%;
   margin: 40px auto 0 auto;
   border-radius: 2px;
   height: 80px;
