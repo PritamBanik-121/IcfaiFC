@@ -1650,7 +1650,7 @@ body.loaded>*:not(.loading-screen) {
 .textContentE h5 {
   font-size: 20px;
   font-weight: 500;
-  color: #f6f4f4;
+  color: #4a4747;
   margin: 8px 0 16px;
   font-size: 20px;
 
@@ -1660,7 +1660,7 @@ body.loaded>*:not(.loading-screen) {
   text-align: justify;
   font-size: 20px;
   line-height: 1.6;
-  color: #000000;
+  color: #333;
 }
 
 
@@ -1740,7 +1740,7 @@ body.loaded>*:not(.loading-screen) {
 
 .textContentF h5 {
   font-weight: 500;
-  color: #f6f4f4;
+  color: #4a4747;
   margin: 8px 0 16px;
   font-size: 20px;
 
@@ -1750,7 +1750,7 @@ body.loaded>*:not(.loading-screen) {
   text-align: justify;
   font-size: 20px;
   line-height: 1.6;
-  color: #1b1a1a;
+  color: #333;
   width: 600px;
 }
 
