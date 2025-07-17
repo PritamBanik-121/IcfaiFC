@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Asta Sans",sans-serif;
+  font-family: "Asta Sans", sans-serif;
 }
 
 html,
@@ -625,17 +625,18 @@ body.loaded>*:not(.loading-screen) {
 
 
 
-.newsdirect{
+.newsdirect {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
 }
-.newsdirectbtn{
+
+.newsdirectbtn {
   text-decoration: none;
   font-size: 20px;
-  font-family: "Asta Sans",sans-serif;
+  font-family: "Asta Sans", sans-serif;
   color: #f3f3f3;
   background: rgb(1, 72, 72);
   padding: 10px;
@@ -644,10 +645,11 @@ body.loaded>*:not(.loading-screen) {
 
 
 @media (max-width: 768px) {
- .newsdirectbtn{
+  .newsdirectbtn {
     font-size: 15px;
   }
-  .news{
+
+  .news {
     padding-top: 95px;
   }
 
@@ -658,7 +660,8 @@ body.loaded>*:not(.loading-screen) {
   .news-card img {
     height: 200px;
   }
-  .news-content h3{
+
+  .news-content h3 {
     font-size: 1rem;
   }
 }
@@ -1650,7 +1653,7 @@ body.loaded>*:not(.loading-screen) {
 .textContentE h5 {
   font-size: 20px;
   font-weight: 500;
-  color: #4a4747;
+  color: #f0f0f0;
   margin: 8px 0 16px;
   font-size: 20px;
 
@@ -1740,7 +1743,7 @@ body.loaded>*:not(.loading-screen) {
 
 .textContentF h5 {
   font-weight: 500;
-  color: #4a4747;
+  color: #f0f0f0;
   margin: 8px 0 16px;
   font-size: 20px;
 
@@ -2107,6 +2110,15 @@ body.loaded>*:not(.loading-screen) {
     text-align: center;
   }
 
+  .textContentE h5 {
+    color: #4a4747;
+  }
+
+  .textContentF h5 {
+    color: #4a4747;
+
+  }
+
   .textContentC h5 {
     font-size: 14px;
     text-align: justify;
@@ -2117,15 +2129,16 @@ body.loaded>*:not(.loading-screen) {
   .textContentX .text,
   .textContentD .text,
   .textContentE .text,
-  .textContentF .text
-   {
+  .textContentF .text {
     font-size: 14px !important;
     text-align: justify;
   }
-.textContentG .text{
-  font-size: 14px !important;
+
+  .textContentG .text {
+    font-size: 14px !important;
     text-align: center;
-}
+  }
+
   .textkontent .text {
     font-size: 14px !important;
     text-align: justify;
@@ -2151,7 +2164,7 @@ body.loaded>*:not(.loading-screen) {
     width: 100px;
   }
 
-    .achievement-wrapper{
+  .achievement-wrapper {
     padding-top: 100px;
   }
 
@@ -2587,12 +2600,14 @@ body.loaded>*:not(.loading-screen) {
   width: 100%;
   padding-right: 20%;
 }
-.footer-bottom a{
+
+.footer-bottom a {
   color: White;
-  font-family: "Oswald",sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 400;
 }
-.footer-bottom a:hover{
+
+.footer-bottom a:hover {
   color: #a5a5a5;
 }
 
@@ -2682,9 +2697,10 @@ body.loaded>*:not(.loading-screen) {
 
 @media (max-width: 480px) {
 
-  .sponsors-section{
+  .sponsors-section {
     margin-top: 85px;
   }
+
   .sponsors-section,
   .instagram-section {
     height: auto;
@@ -2819,7 +2835,7 @@ body.loaded>*:not(.loading-screen) {
 }
 
 @media (max-width: 768px) {
-    .squad-section{
+  .squad-section {
     padding-top: 100px;
   }
 
@@ -3243,8 +3259,8 @@ body.loaded>*:not(.loading-screen) {
 .jersey-title {
   font-family: 'Oswald', sans-serif;
   color: #143b6d;
-font-size: 55px;
-letter-spacing: 2px;
+  font-size: 55px;
+  letter-spacing: 2px;
   font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 10px;
@@ -4031,7 +4047,7 @@ letter-spacing: 2px;
   text-align: center;
 }
 
-.hero-buttons a:hover{
-background: #b91c1c;
+.hero-buttons a:hover {
+  background: #b91c1c;
   transform: scale(1.05);
 }
